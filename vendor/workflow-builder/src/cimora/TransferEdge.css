@@ -1,0 +1,6 @@
+#cimora-canvas .transfer-edge-light{pointer-events:none}
+#cimora-canvas .transfer-edge-light path{fill:none;stroke-linecap:round;stroke-dasharray:.045 1;animation:transfer-edge-flow 2s linear infinite;animation-delay:var(--transfer-phase)}
+#cimora-canvas .transfer-edge-glow{stroke-width:6;opacity:.4}
+#cimora-canvas .transfer-edge-core{stroke:#fff9e8;stroke-width:2.5;opacity:.95}
+@keyframes transfer-edge-flow{from{stroke-dashoffset:.045}to{stroke-dashoffset:-1}}
+@media(prefers-reduced-motion:reduce){#cimora-canvas .transfer-edge-light{display:none}}

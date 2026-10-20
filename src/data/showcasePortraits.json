@@ -1,0 +1,74 @@
+[
+  {
+    "id": "style-0",
+    "name": "Suzume",
+    "style": "Anime",
+    "description": "Luminous skies, expressive characters and richly painted everyday places.",
+    "poster": "/images/showcase/poster-0.jpg",
+    "avatar": "/images/showcase/poster-0.jpg",
+    "source": "https://suzume-tojimari-movie.jp/"
+  },
+  {
+    "id": "style-1",
+    "name": "Spider-Man: Across the Spider-Verse",
+    "style": "Comic Book",
+    "description": "Graphic shapes, bold color and comic-book energy in every frame.",
+    "poster": "/images/showcase/poster-1.jpg?v=hd2",
+    "avatar": "/images/showcase/poster-1.jpg?v=hd2",
+    "source": "https://www.sonypictures.com/movies/spidermanacrossthespiderverse"
+  },
+  {
+    "id": "style-2",
+    "name": "The Wild Robot",
+    "style": "Stylized 3D",
+    "description": "Sculpted characters and painterly environments with a warm, tactile feel.",
+    "poster": "/images/showcase/poster-2.jpg?v=hd2",
+    "avatar": "/images/showcase/poster-2.jpg?v=hd2",
+    "source": "https://www.impawards.com/2024/wild_robot_ver3.html"
+  },
+  {
+    "id": "style-3",
+    "name": "Cyberpunk: Edgerunners",
+    "style": "Cyberpunk",
+    "description": "Neon streets, electric colors and the restless energy of a future city.",
+    "poster": "/images/showcase/poster-3.jpg?v=hd2",
+    "avatar": "/images/showcase/poster-3.jpg?v=hd2",
+    "source": "https://www.cyberpunk.net/en/edgerunners"
+  },
+  {
+    "id": "style-4",
+    "name": "Howl’s Moving Castle",
+    "style": "Fantasy",
+    "description": "Impossible architecture, magical landscapes and a world full of wonder.",
+    "poster": "/images/showcase/poster-4.jpg?v=hd2",
+    "avatar": "/images/showcase/poster-4.jpg?v=hd2",
+    "source": "https://www.impawards.com/2005/howls_moving_castle_ver4.html"
+  },
+  {
+    "id": "style-5",
+    "name": "A Silent Voice",
+    "style": "School Life",
+    "description": "Soft daylight, familiar classrooms and the emotions between ordinary moments.",
+    "poster": "/images/showcase/poster-5.webp?v=hd2",
+    "avatar": "/images/showcase/poster-5.webp?v=hd2",
+    "source": "https://koenokatachi-movie.com/"
+  },
+  {
+    "id": "style-6",
+    "name": "WALL·E",
+    "style": "Sci-Fi",
+    "description": "Distant worlds, expressive robots and the wonder of exploring the unknown.",
+    "poster": "/images/showcase/poster-6.jpg?v=hd2",
+    "avatar": "/images/showcase/poster-6.jpg?v=hd2",
+    "source": "https://www.goldposter.com/13742462/xxlg/"
+  },
+  {
+    "id": "style-7",
+    "name": "Song of the Sea",
+    "style": "Illustrated Tales",
+    "description": "Decorative shapes, hand-drawn textures and the quiet magic of folklore.",
+    "poster": "/images/showcase/poster-7.jpg?v=hd2",
+    "avatar": "/images/showcase/poster-7.jpg?v=hd2",
+    "source": "https://www.impawards.com/intl/misc/2014/song_of_the_sea.html"
+  }
+]

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;650&display=swap');
+.cimora-navigation{font-family:'Inter Tight',sans-serif;color:#fff;-webkit-font-smoothing:antialiased}.cimora-navigation *{box-sizing:border-box}.cimora-navigation a{color:#fff;text-decoration:none}.cimora-navigation button{font:inherit;cursor:pointer}.cimora-nav{position:fixed;z-index:15;top:calc(max(16px,2.1769vw) + env(safe-area-inset-top));display:flex;pointer-events:auto}.cimora-navigation :focus-visible{outline:2px solid #eb0004;outline-offset:4px}
+/* Shifting navigation: one floating surface, directional content transitions. */
+.cimora-nav{left:50%;right:auto;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 32px);gap:8px;align-items:center}
+.cimora-nav>:is(a,button){flex:none;display:flex;align-items:center;justify-content:center;gap:9px;padding:11px 20px;border:0;border-radius:999px;color:#fff;font-size:24px;font-weight:500;line-height:1.25;text-transform:none;text-align:center;white-space:nowrap;background:transparent}
+.cimora-nav>:is(a,button)[aria-expanded=true]{background:#262626}
+.shift-chevron{display:inline-block;font-size:17px;line-height:1;transition:transform .25s ease}
+[aria-expanded=true]>.shift-chevron{transform:rotate(180deg)}
+.cimora-nav-panel{position:fixed;z-index:15;max-height:calc(100dvh - 130px);overflow:visible;padding:20px;background:linear-gradient(180deg,#171717 0%,#171717 60%,#262626);border:1px solid #525252;border-radius:10px;color:white;pointer-events:auto;animation:shiftOpen .2s ease both;box-shadow:0 16px 36px #0003}
+.cimora-nav-panel[hidden]{display:none}
+.cimora-nav-panel::before{content:'';position:absolute;left:0;right:0;top:-25px;height:25px}
+.cimora-nav-panel.shift-closing{animation:shiftClose .16s ease both;pointer-events:none}
+.shift-nub{position:absolute;top:0;left:var(--nub-left,40px);width:16px;height:16px;border:1px solid #525252;background:#171717;transform:translate(-50%,-50%) rotate(45deg);clip-path:polygon(0 0,100% 0,50% 50%,0 100%);transition:left .25s ease-in-out}
+.shift-viewport{overflow:hidden;max-height:calc(100dvh - 175px);overflow-y:auto;padding:4px;margin:-4px}
+.shift-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.shift-content h3{font-size:14px;font-weight:500;margin:0 0 12px}
+.shift-content button,.shift-content a{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:9px 0;border:0;background:none;color:#fff;font-family:inherit;font-size:13px;line-height:1.5;text-align:left;white-space:normal;cursor:pointer}
+.shift-content a:hover,.shift-content button:hover{text-decoration:underline;text-underline-offset:4px}
+.shift-content p{font-size:13px;line-height:1.7;color:#fff;margin-bottom:14px}
+.shift-kicker{display:block;font-size:10px;letter-spacing:.08em;margin-bottom:12px}
+.shift-feature h3{font-size:19px;line-height:1.3}.shift-feature>:is(a,button){margin-top:10px}
+@keyframes shiftOpen{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes shiftClose{from{opacity:1;transform:none}to{opacity:0;transform:translateY(8px)}}
+@media(max-width:600px){.cimora-nav{gap:1px}.cimora-nav>:is(a,button){font-size:16px;padding:10px 9px;gap:5px}.cimora-nav-panel{padding:18px}}
+@media(max-width:380px){.cimora-nav>:is(a,button){font-size:13px;padding:10px 6px;gap:4px}}
+@media(prefers-reduced-motion:reduce){.cimora-nav-panel,.shift-chevron,.shift-nub{animation:none!important;transition:none!important}}
+
+.cimora-navigation .shift-content{animation:siteNavContent .25s ease-in-out both}.cimora-navigation .shift-content p{margin:0 0 14px}.cimora-nav-dialog{position:fixed;inset:0;margin:auto;width:min(620px,calc(100% - 40px));padding:40px;background:#000;color:#fff;border:1px solid #fff;font-family:inherit}.cimora-nav-dialog::backdrop{background:rgb(0 0 0 / .85)}.cimora-nav-dialog button{display:block;margin-left:auto;background:none;border:0;padding:8px;color:#fff}.cimora-nav-dialog p{margin:28px 0 0;line-height:1.5}.cimora-nav-dialog h2{font-size:clamp(28px,5vw,60px);margin:30px 0 0;line-height:1.2}.cimora-nav-dialog>p:first-of-type{font-size:11px}.cimora-nav-dialog a{text-decoration:underline;text-underline-offset:4px}@keyframes siteNavContent{from{opacity:0;transform:translateX(var(--shift-direction,0px))}to{opacity:1;transform:none}}@media(prefers-reduced-motion:reduce){.cimora-navigation .shift-content{animation:none}}

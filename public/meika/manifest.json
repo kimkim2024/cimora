@@ -1,0 +1,410 @@
+[
+  {
+    "file": "landscape.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/0/0",
+    "name": "图层 11",
+    "bbox": [
+      0,
+      1,
+      2435,
+      1125
+    ],
+    "size": [
+      2435,
+      1124
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "landscape-blur.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/0/1",
+    "name": "图层 11 拷贝",
+    "bbox": [
+      0,
+      0,
+      2436,
+      1125
+    ],
+    "size": [
+      2436,
+      1125
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "boar-rider.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/8",
+    "name": "图层 24",
+    "bbox": [
+      260,
+      -79,
+      1534,
+      1062
+    ],
+    "size": [
+      1274,
+      1141
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "avatar.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/1/7",
+    "name": "图层 37",
+    "bbox": [
+      0,
+      28,
+      194,
+      198
+    ],
+    "size": [
+      194,
+      170
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "coin.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/9/6",
+    "name": "图层 29",
+    "bbox": [
+      1237,
+      15,
+      1310,
+      91
+    ],
+    "size": [
+      73,
+      76
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "gem.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/9/13",
+    "name": "图层 31",
+    "bbox": [
+      1567,
+      16,
+      1631,
+      92
+    ],
+    "size": [
+      64,
+      76
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "key.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/9/14",
+    "name": "图层 32",
+    "bbox": [
+      1891,
+      16,
+      1962,
+      88
+    ],
+    "size": [
+      71,
+      72
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "chest.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/10/4",
+    "name": "图层 73",
+    "bbox": [
+      41,
+      832,
+      226,
+      977
+    ],
+    "size": [
+      185,
+      145
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "knight.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/7/2",
+    "name": "图层 77",
+    "bbox": [
+      1603,
+      625,
+      2197,
+      1103
+    ],
+    "size": [
+      594,
+      478
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "witch.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/11/2",
+    "name": "图层 89",
+    "bbox": [
+      1917,
+      4,
+      2436,
+      416
+    ],
+    "size": [
+      519,
+      412
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "trophy.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/7/26",
+    "name": "图层 64",
+    "bbox": [
+      2084,
+      628,
+      2352,
+      933
+    ],
+    "size": [
+      268,
+      305
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "home-icon.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/3/8",
+    "name": "首页 拷贝",
+    "bbox": [
+      1102,
+      1038,
+      1172,
+      1095
+    ],
+    "size": [
+      70,
+      57
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "heroes-icon.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/3/14",
+    "name": "形状 4 拷贝 5",
+    "bbox": [
+      1443,
+      1035,
+      1498,
+      1099
+    ],
+    "size": [
+      55,
+      64
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "summon-icon.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/3/15",
+    "name": "形状 5 拷贝",
+    "bbox": [
+      1761,
+      1036,
+      1833,
+      1098
+    ],
+    "size": [
+      72,
+      62
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "guild-icon.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/3/16",
+    "name": "形状 5 拷贝 2",
+    "bbox": [
+      2083,
+      1028,
+      2145,
+      1105
+    ],
+    "size": [
+      62,
+      77
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "mail-icon.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/4/3",
+    "name": "打开信息",
+    "bbox": [
+      51,
+      255,
+      123,
+      315
+    ],
+    "size": [
+      72,
+      60
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "shop-icon.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/4/8",
+    "name": "商店",
+    "bbox": [
+      52,
+      405,
+      122,
+      462
+    ],
+    "size": [
+      70,
+      57
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "friends-icon.webp",
+    "source": "欧美卡通画板 1 拷贝.psd",
+    "layer": "0/4/12",
+    "name": "形状 4 拷贝 3",
+    "bbox": [
+      47,
+      545,
+      128,
+      610
+    ],
+    "size": [
+      81,
+      65
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "activity-art.webp",
+    "source": "欧美卡通画板 3.psd",
+    "layer": "0/0",
+    "name": "9727ecd9d484c4f3f54dbeb2552f7129bd9b764a6afe2-OEw1Py_fw1200",
+    "bbox": [
+      -15,
+      -13,
+      2440,
+      1251
+    ],
+    "size": [
+      2455,
+      1264
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "potion.webp",
+    "source": "欧美卡通画板 3.psd",
+    "layer": "0/35",
+    "name": "图层 166",
+    "bbox": [
+      2122,
+      211,
+      2277,
+      400
+    ],
+    "size": [
+      155,
+      189
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "ring.webp",
+    "source": "欧美卡通画板 3.psd",
+    "layer": "0/36",
+    "name": "图层 168",
+    "bbox": [
+      1957,
+      525,
+      2089,
+      664
+    ],
+    "size": [
+      132,
+      139
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "leaf.webp",
+    "source": "欧美卡通画板 3.psd",
+    "layer": "0/33",
+    "name": "图层 164",
+    "bbox": [
+      1505,
+      956,
+      1622,
+      1042
+    ],
+    "size": [
+      117,
+      86
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "purchase-skin.webp",
+    "source": "欧美卡通画板 3.psd",
+    "layer": "0/38",
+    "name": "图层 177",
+    "bbox": [
+      1935,
+      935,
+      2348,
+      1041
+    ],
+    "size": [
+      413,
+      106
+    ],
+    "method": "cached-layer-pixels"
+  },
+  {
+    "file": "crystal.webp",
+    "source": "欧美卡通画板 4.psd",
+    "layer": "0/3",
+    "name": "图层 198",
+    "bbox": [
+      992,
+      286,
+      1470,
+      792
+    ],
+    "size": [
+      478,
+      506
+    ],
+    "method": "cached-layer-pixels"
+  }
+]

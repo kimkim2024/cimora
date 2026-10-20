@@ -1,0 +1,70 @@
+#cimora-canvas .character-design-node{width:820px;background:#262d39;color:#eef1f5;border:2px solid #5b687e;box-shadow:5px 5px 0 #131a26;font-family:Inter,Arial,sans-serif}#cimora-canvas .character-design-node.is-selected{border-color:#eaaa87}#cimora-canvas .character-design-node header{height:50px;display:flex;align-items:center;gap:10px;padding:0 16px;background:#191f2a;border-bottom:1px solid #526079}#cimora-canvas .character-design-node header strong{font-family:'Arial Black',Arial,sans-serif;font-size:15px}#cimora-canvas .character-design-node header span{font-size:10px;color:#b9c4d7;margin-left:auto}#cimora-canvas .character-design-node button{cursor:pointer;border:1px solid #5b687e;background:#354156;color:#eef1f5;padding:10px;font:600 12px Inter,Arial,sans-serif;display:flex;align-items:center;justify-content:center;gap:6px}#cimora-canvas .character-design-node button:disabled{opacity:.45;cursor:default}#cimora-canvas .character-design-node button:focus-visible{outline:2px solid #eaaa87;outline-offset:2px}#cimora-canvas .character-columns{display:grid;grid-template-columns:310px 1fr;grid-template-rows:minmax(0,1fr);height:520px}#cimora-canvas .character-inputs{border-right:1px solid #526079;overflow:hidden;display:flex;flex-direction:column;min-height:0}#cimora-canvas .character-inputs label{display:flex;flex-direction:column;gap:8px;font-size:12px;font-weight:600}#cimora-canvas .character-inputs :is(input,textarea,select){width:100%;border:1px solid #526079;background:#191f2a;color:#eef1f5;padding:10px;font:13px Inter,Arial,sans-serif;box-sizing:border-box}#cimora-canvas .character-inputs textarea{height:120px;resize:none}#cimora-canvas .character-inputs p{font-size:11px;color:#b5bfd0;line-height:1.5;margin:0}#cimora-canvas .character-design-node .character-primary{background:#eaaa87;color:#242530;margin-top:auto}#cimora-canvas .character-results{padding:18px;display:flex;flex-direction:column;gap:12px;min-width:0;min-height:0}#cimora-canvas .character-result-title{display:flex;justify-content:space-between;gap:8px;font-size:11px}#cimora-canvas .character-result-title span{color:#b5bfd0;font-size:10px}#cimora-canvas .character-design-node .character-preview{position:relative;flex:1;min-height:0;background:#1b222d;padding:0;border:1px solid #526079;overflow:hidden;opacity:1}#cimora-canvas .character-preview img{width:100%;height:100%;object-fit:contain}#cimora-canvas .character-preview>span{display:flex;flex-direction:column;align-items:center;gap:12px;color:#b5bfd0}#cimora-canvas .character-preview>svg{position:absolute;right:10px;bottom:10px;background:#191f2a;padding:5px;box-sizing:content-box}#cimora-canvas .character-preview .character-loading{position:absolute;inset:0;background:#191f2ad9;justify-content:center}#cimora-canvas .character-actions{display:flex;gap:10px}#cimora-canvas .character-actions button{flex:1}#cimora-canvas .character-results small{font-size:10px;color:#b5bfd0}#cimora-canvas .character-summary{display:flex;align-items:center;gap:16px;padding:16px}#cimora-canvas .character-summary img{width:90px;height:90px;object-fit:contain}.character-image-dialog{width:min(1000px,90vw);max-height:90vh;background:#202735;border:2px solid #6a7890;color:#fff;padding:20px}.character-image-dialog::backdrop{background:#101725c9}.character-image-dialog>button{float:right;background:transparent;color:white;border:0;padding:8px;cursor:pointer}.character-image-dialog img{display:block;width:100%;height:70vh;object-fit:contain}.character-image-dialog a{display:block;text-align:center;padding:10px;color:#efba98}
+
+#cimora-canvas .character-asset-card{grid-column:1/-1}#cimora-canvas .character-asset-card .resource-preview img{object-fit:contain}#cimora-canvas .character-asset-card .resource-primary{display:block;padding:8px 12px;margin:12px 0 8px}#cimora-canvas .character-asset-card a{font-size:12px;text-decoration:underline}
+
+#cimora-canvas .character-color-control{display:flex;align-items:center;gap:12px;padding:7px 10px;background:#191f2a;border:1px solid #526079;min-height:44px;box-sizing:border-box}
+#cimora-canvas .character-color-control input[type=color]{width:42px;height:28px;flex:none;padding:0;border:0;background:none;cursor:pointer}
+#cimora-canvas .character-color-control input[type=color]::-webkit-color-swatch-wrapper{padding:0}
+#cimora-canvas .character-color-control input[type=color]::-webkit-color-swatch{border:1px solid #ffffff40;border-radius:0}
+#cimora-canvas .character-color-control input[type=color]::-moz-color-swatch{border:1px solid #ffffff40;border-radius:0}
+#cimora-canvas .character-color-control>span{font:12px ui-monospace,Consolas,monospace;color:#c7d2e6;letter-spacing:.04em}
+#cimora-canvas .character-color-control:focus-within{outline:2px solid #eaaa87;outline-offset:2px}
+#cimora-canvas .character-color-control input:disabled{opacity:.45;cursor:default}
+
+#cimora-canvas .character-palette{display:flex;flex-direction:column;gap:9px}
+#cimora-canvas .character-palette-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px}
+#cimora-canvas .character-palette-heading button{padding:5px 0;font-size:11px;border:0;background:transparent;box-shadow:none}
+#cimora-canvas .character-palette-row{display:grid;grid-template-columns:34px minmax(0,1fr) 26px;gap:7px;align-items:center}
+#cimora-canvas .character-palette-row .palette-color-trigger{height:34px;width:34px;padding:4px;border:1px solid #526078;background:#1a202b;cursor:pointer}
+#cimora-canvas .palette-color-trigger span{display:block;width:100%;height:100%}
+#cimora-canvas .palette-color-trigger:hover,#cimora-canvas .palette-color-trigger[aria-expanded=true]{border-color:#edb38e}
+.palette-color-popover{position:fixed;z-index:10000;width:234px;max-width:calc(100vw - 16px);box-sizing:border-box;border:1px solid #777;background:#3b3b3b;color:#fff;box-shadow:0 3px 10px #0006;font:13px Arial,sans-serif}
+.palette-color-popover *{box-sizing:border-box}
+.palette-color-field{height:138px;position:relative;background-image:linear-gradient(to top,#000,transparent),linear-gradient(to right,#fff,transparent);cursor:crosshair;touch-action:none;overflow:hidden}
+.palette-color-marker{position:absolute;width:16px;height:16px;border:4px solid white;border-radius:50%;box-shadow:0 0 2px #0008;transform:translate(-50%,-50%);pointer-events:none}
+.palette-color-controls{padding:8px 12px 12px}
+.palette-color-tools{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.palette-color-tools button{display:flex;align-items:center;justify-content:center;flex:none;padding:0;width:18px;height:26px;border:0;background:transparent;color:white;cursor:pointer}
+.palette-color-tools button:disabled{opacity:.4;cursor:default}
+.palette-color-preview{flex:none;width:32px;height:32px;border-radius:50%}
+.palette-color-hue{appearance:none;min-width:0;width:100%;height:12px;margin:0;border:0;border-radius:0;background:linear-gradient(to right,#f00,#ff0,#0f0,#0ff,#00f,#f0f,#f00);cursor:pointer}
+.palette-color-hue::-webkit-slider-thumb{appearance:none;width:16px;height:16px;border:2px solid white;background:transparent;box-shadow:0 0 2px #0008;border-radius:50%}
+.palette-color-hue::-moz-range-thumb{width:12px;height:12px;border:2px solid white;background:transparent;border-radius:50%}
+.palette-color-channels{display:flex;gap:6px;padding:0 10px}
+.palette-color-channels label{display:flex;flex-direction:column;gap:8px;align-items:center;flex:1;min-width:0}
+.palette-color-channels input{appearance:textfield;width:100%;min-width:0;height:32px;padding:4px;border:1px solid #888;border-radius:2px;background:transparent;color:white;text-align:center;font:14px Arial,sans-serif}
+.palette-color-channels input::-webkit-inner-spin-button,.palette-color-channels input::-webkit-outer-spin-button{appearance:none;margin:0}
+.palette-color-popover :focus-visible{outline:2px solid #a8cfff;outline-offset:2px}
+#cimora-canvas .character-palette-row input:not([type=color]){min-width:0;padding:8px;font-size:12px}
+#cimora-canvas .character-palette-row button{padding:5px;border:0;background:transparent}
+#cimora-canvas .character-inputs>label{flex-shrink:0}
+
+#cimora-canvas .character-input-scroll{padding:18px;overflow:auto;min-height:0;flex:1;display:flex;flex-direction:column;gap:14px}
+#cimora-canvas .character-input-scroll>label{flex-shrink:0}
+#cimora-canvas .character-generate-controls{flex-shrink:0;display:flex;flex-direction:column;gap:12px;padding:14px 18px 18px;border-top:1px solid #526079;background:#262d39}
+
+#cimora-canvas .asset-card-actions{display:flex;gap:8px;margin-top:12px}
+#cimora-canvas .character-asset-card .asset-card-actions .resource-primary,#cimora-canvas .character-asset-card .asset-download{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;margin:0;padding:8px 6px;min-height:34px;box-sizing:border-box;font:600 12px Inter,Arial,sans-serif;white-space:nowrap;text-decoration:none}
+#cimora-canvas .character-asset-card .asset-download{background:#353838;color:#eeeade;border:1px solid #65665f;cursor:pointer}
+#cimora-canvas .character-asset-card .asset-download:hover{background:#454741}
+#cimora-canvas .character-asset-card .asset-download:focus-visible{outline:2px solid #edc052;outline-offset:2px}
+
+#cimora-canvas .character-design-node.is-collapsed{width:340px}
+#cimora-canvas .character-collapsed-image{position:relative}
+#cimora-canvas .character-collapsed-image>img{display:block;width:100%;height:auto}
+#cimora-canvas .character-collapsed-empty{height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#b5bfd0;font-size:12px}
+#cimora-canvas .character-design-node .character-expand{position:absolute;top:8px;right:8px;opacity:0;background:#191f2a}
+#cimora-canvas .character-collapsed-image:hover .character-expand,#cimora-canvas .character-expand:focus-visible,#cimora-canvas .character-collapsed-empty+.character-expand{opacity:1}
+@media(hover:none){#cimora-canvas .character-design-node .character-expand{opacity:1}}
+
+#cimora-canvas .character-empty-artwork,#cimora-canvas .character-preview .character-empty-artwork{display:block;width:240px;height:280px;object-fit:contain;flex-shrink:0;filter:brightness(1.2) saturate(1.15)}
+#cimora-canvas .character-design-node .character-preview:has(.character-empty-state){opacity:1}
+#cimora-canvas .character-preview>.character-empty-state{gap:8px;padding:16px}
+#cimora-canvas .character-empty-state strong{font-size:14px;color:#bdc9d9}
+#cimora-canvas .character-empty-state small{font-size:11px;font-weight:400;color:#8f9eb3}
+#cimora-canvas .character-collapsed-empty .character-empty-artwork{width:180px;height:210px}
+#cimora-canvas .character-design-node header>button{margin-left:auto}
+#cimora-canvas .character-design-node .character-preview:has(.scene-empty-artwork){opacity:1}
+#cimora-canvas .design-reference-images{display:flex;flex-direction:column;gap:8px;font-size:12px}
+#cimora-canvas .design-reference-images>div{display:flex;gap:8px;flex-wrap:wrap}
+#cimora-canvas .design-reference-images img{width:64px;height:64px;object-fit:contain;background:#191f2a;border:1px solid #526079}

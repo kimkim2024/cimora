@@ -1,0 +1,739 @@
+/* Fantasy paper-card skin. Kept isolated from canvas behavior and saved data. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme][data-palette]{
+ --canvas-bg:#233e43;--canvas-panel:#eee4ce;--canvas-raised:#ded4bd;--canvas-input:#f6edda;
+ --canvas-border:#a59b80;--canvas-text:#283c3c;--canvas-muted:#68746a;
+ --canvas-primary:#e9bc55;--canvas-on-primary:#302d21;--canvas-selection:#2a898a;
+ --canvas-tint:#71ada329;--canvas-grid:#c0d0b913;--canvas-dots:#bed0b74d;
+ --canvas-danger:#b34f43;--canvas-icon:#456865;--canvas-node-border:#b6ae93;
+ --paper-layer:#a69a7b;--paper-shadow:#152f34;--paper-caption:#e6dfc6;--paper-highlight:#74d2c2;
+ color-scheme:light;background:var(--canvas-bg);color:var(--canvas-text);
+}
+#cimora-canvas.canvas-fantasy-experiment .react-flow{
+ background-color:var(--canvas-bg);
+ background-image:linear-gradient(145deg,transparent 62%,#9db9a604 62%,#9db9a604 80%,transparent 80%),linear-gradient(28deg,transparent 30%,#0e282c12 30%,#0e282c12 50%,transparent 50%),repeating-linear-gradient(108deg,#f5ebcb03 0 1px,transparent 1px 5px);
+}
+#cimora-canvas.canvas-fantasy-experiment .canvas-heading{color:var(--paper-caption)}
+#cimora-canvas.canvas-fantasy-experiment .canvas-heading-row>button{color:var(--paper-caption)}
+#cimora-canvas.canvas-fantasy-experiment :is(.canvas-resource-panel,.node-properties-panel.composer-shell,.canvas-bottom-popover,.ct-popover,.ct-quick-panel,.ct-creator-guide,.canvas-select-node,.composer-popover,.composer-popover.video-settings-menu,.composer-popover.video-model-menu,.reference-source-menu,.reference-picker-dialog,.video-preset-dialog){
+ border-radius:3px 15px 3px 3px;border:1px solid var(--canvas-border);
+ background-color:var(--canvas-panel);background-image:repeating-linear-gradient(0deg,#75684603 0 1px,transparent 1px 4px);
+ box-shadow:inset 0 2px 0 #fff8,4px 5px 0 var(--paper-layer),5px 7px 0 var(--paper-shadow),0 15px 24px #0b24283b;
+ color:var(--canvas-text);
+}
+#cimora-canvas.canvas-fantasy-experiment :is(.ct-capsule,.canvas-bottom-toolbar,.text-node-toolbar,.image-node-hover-tools,.ct-theme-menu){
+ border-radius:4px 13px 4px 4px;background:var(--canvas-panel);border:1px solid var(--canvas-border);
+ box-shadow:inset 0 2px 0 #fff9,3px 4px 0 var(--paper-layer),4px 6px 0 var(--paper-shadow);
+ backdrop-filter:none;
+}
+#cimora-canvas.canvas-fantasy-experiment .canvas-node-tools{
+ border-radius:4px 15px 4px 4px!important;background:var(--canvas-panel)!important;border-color:var(--canvas-border)!important;
+ box-shadow:inset 0 2px 0 #fff9,3px 4px 0 var(--paper-layer),4px 6px 0 var(--paper-shadow)!important;
+}
+/* The card shape lives behind the content: ports and floating controls stay unclipped. */
+#cimora-canvas.canvas-fantasy-experiment :is(.image-node-clean,.video-node-clean,.text-node-clean){
+ border-radius:3px 16px 3px 3px;background:var(--canvas-raised);border:2px solid var(--canvas-node-border);
+ box-shadow:inset 0 2px 0 #fff9,5px 6px 0 var(--paper-layer),6px 8px 0 var(--paper-shadow),0 14px 20px #0b252733;
+ color:var(--canvas-text);
+}
+#cimora-canvas.canvas-fantasy-experiment :is(.image-node-clean,.video-node-clean,.text-node-clean)::before{
+ content:'';position:absolute;inset:5px;pointer-events:none;border:1px solid #7c806c24;border-radius:1px 10px 1px 1px;
+}
+#cimora-canvas.canvas-fantasy-experiment :is(.image-node-surface,.video-node-surface,.image-node-surface>img){border-radius:1px 12px 1px 1px}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] :is(.image-node-caption,.video-node-caption,.text-node-caption){color:var(--paper-caption);letter-spacing:.04em}
+#cimora-canvas.canvas-fantasy-experiment :is(.image-node-clean,.video-node-clean,.text-node-clean)::after{content:'';position:absolute;right:-2px;top:-2px;width:12px;height:12px;pointer-events:none;background:linear-gradient(45deg,transparent 44%,var(--canvas-node-border) 45%,var(--canvas-node-border) 55%,var(--canvas-bg) 56%)}
+#cimora-canvas.canvas-fantasy-experiment :is(.composer-pill,.resource-new,.resource-primary,.image-node-empty button,.video-node-empty button){clip-path:polygon(0 0,calc(100% - 7px) 0,100% 7px,100% 100%,7px 100%,0 calc(100% - 7px))}
+#cimora-canvas.canvas-fantasy-experiment :is(.image-node-clean,.video-node-clean,.text-node-clean):hover{border-color:#d8d6b5}
+#cimora-canvas.canvas-fantasy-experiment :is(.image-node-clean,.video-node-clean,.text-node-clean).is-selected{
+ border-color:#74d2c2;box-shadow:inset 0 0 0 1px #286f6c,5px 6px 0 #527e73,6px 8px 0 var(--paper-shadow),0 0 0 2px #74d2c238;
+}
+#cimora-canvas.canvas-fantasy-experiment .react-flow__node.group-range-highlight>:is(div,article):first-child{outline-color:#74d2c2;box-shadow:5px 6px 0 #587c71,6px 8px 0 var(--paper-shadow)}
+#cimora-canvas.canvas-fantasy-experiment .react-flow__node.dragging>div:first-child{box-shadow:7px 10px 0 #152f3590,0 20px 28px #08232a55}
+#cimora-canvas.canvas-fantasy-experiment .canvas-group-frame{border:1px dashed #adbda780;border-radius:4px;background:#9ab7a309}
+#cimora-canvas.canvas-fantasy-experiment .canvas-group-frame header{color:#cbd3b8}
+#cimora-canvas.canvas-fantasy-experiment .react-flow__handle{
+ border-radius:2px!important;box-shadow:none!important;
+}
+#cimora-canvas.canvas-fantasy-experiment .react-flow__handle.connectable:hover::after{outline:2px solid #a8b9ce66;outline-offset:4px}
+#cimora-canvas.canvas-fantasy-experiment .react-flow__edge.selected .react-flow__edge-path{stroke:var(--canvas-text)!important;stroke-width:3}
+#cimora-canvas.canvas-fantasy-experiment :is(.canvas-node-tools button,.canvas-bottom-toolbar button,.ct-capsule button,.text-node-toolbar button,.image-node-hover-tools button){border-radius:3px}
+#cimora-canvas.canvas-fantasy-experiment :is(.composer-pill,.video-composer .composer-model,.video-composer .video-settings-trigger,.resource-new,.resource-primary,.image-node-empty button,.video-node-empty button,.video-settings-content button,.bottom-options button){
+ border-radius:3px 10px 3px 3px;background:var(--canvas-raised);color:var(--canvas-text);border-color:var(--canvas-border);
+ box-shadow:inset 0 1px 0 #fff7,0 2px 0 #aa9e80;
+}
+#cimora-canvas.canvas-fantasy-experiment :is(.node-composer .composer-generate,.node-composer .composer-generate:hover:not(:disabled),.resource-detail .resource-primary,.resource-new,.reference-picker-dialog footer button:last-child){
+ background:#e9bc55;color:#302d21;border:1px solid #aa8035;border-radius:3px 10px 3px 3px;
+ box-shadow:inset 0 2px 0 #ffe8a4,0 3px 0 #9b7231;
+}
+#cimora-canvas.canvas-fantasy-experiment :is(.canvas-node-tools button[aria-pressed=true],.canvas-bottom-toolbar button[aria-pressed=true],.resource-sources button[aria-pressed=true],.bottom-options button[aria-pressed=true],.video-settings-content button[aria-pressed=true]){background:var(--canvas-raised);color:var(--canvas-text);box-shadow:inset 3px 0 0 #c1943e}
+#cimora-canvas.canvas-fantasy-experiment :is(.resource-tabs button[aria-selected=true],.resource-filters button[aria-pressed=true]){border-color:#b18b39}
+#cimora-canvas.canvas-fantasy-experiment :is(.resource-card,.resource-preview,.resource-search,.resource-sources,.bottom-options,.composer-add,.canvas-node-choice i){border-radius:3px 10px 3px 3px}
+#cimora-canvas.canvas-fantasy-experiment .resource-card{border-color:var(--canvas-border);box-shadow:2px 3px 0 var(--paper-layer);background:var(--canvas-panel)}
+#cimora-canvas.canvas-fantasy-experiment .resource-preview{background:linear-gradient(150deg,#c5cfb9 60%,#b8c4ae 60%)}
+#cimora-canvas.canvas-fantasy-experiment .canvas-node-choice i{background:var(--canvas-raised);color:var(--canvas-icon)}
+#cimora-canvas.canvas-fantasy-experiment :is(.ct-capsule,.canvas-node-tools,.canvas-bottom-toolbar,.composer-actions,.composer-heading,.image-node-hover-tools,.text-node-toolbar) svg{stroke-width:1.8;stroke-linecap:square;stroke-linejoin:miter}
+#cimora-canvas.canvas-fantasy-experiment :is(.canvas-bottom-toolbar button,.canvas-node-tools button,.ct-capsule button):hover:not(:disabled){background:var(--canvas-tint);box-shadow:inset 0 0 0 1px #869e8b}
+#cimora-canvas.canvas-fantasy-experiment :is(.canvas-bottom-toolbar button[aria-label="Clear canvas"],.image-node-hover-tools .image-node-delete){color:#b34f43}
+#cimora-canvas.canvas-fantasy-experiment .ct-avatar{background:var(--canvas-raised);color:var(--canvas-text);border-radius:4px}
+#cimora-canvas.canvas-fantasy-experiment .canvas-status{background:var(--canvas-bg);color:#bcc5ad}
+/* Black uses neutral charcoal materials, without the green map tint. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme=dark][data-palette=neutral]{
+ --canvas-bg:#171819;--canvas-panel:#252628;--canvas-raised:#303234;--canvas-input:#1d1e20;
+ --canvas-text:#eeeae2;--canvas-muted:#b1afa9;--canvas-icon:#c5c2ba;--canvas-node-border:#6d6e70;
+ --canvas-border:#505154;--canvas-grid:#d6d6d612;--canvas-dots:#cccccc55;
+ --canvas-selection:#e9bc55;--canvas-tint:#ffffff0d;--canvas-danger:#f07872;
+ --paper-layer:#424345;--paper-shadow:#0b0c0d;--paper-caption:#dedbd3;
+ color-scheme:dark;
+}
+#cimora-canvas.canvas-fantasy-experiment[data-theme=dark] .react-flow{
+ background-image:linear-gradient(145deg,transparent 62%,#ffffff03 62%,#ffffff03 80%,transparent 80%),linear-gradient(28deg,transparent 30%,#00000018 30%,#00000018 50%,transparent 50%),repeating-linear-gradient(108deg,#ffffff03 0 1px,transparent 1px 5px);
+}
+#cimora-canvas.canvas-fantasy-experiment[data-theme=dark] :is(.canvas-resource-panel,.node-properties-panel.composer-shell,.canvas-bottom-popover,.ct-popover,.ct-quick-panel,.ct-creator-guide,.canvas-select-node,.composer-popover,.reference-source-menu,.reference-picker-dialog,.video-preset-dialog,.ct-capsule,.canvas-bottom-toolbar,.text-node-toolbar,.image-node-hover-tools,.ct-theme-menu,.image-node-clean,.video-node-clean,.text-node-clean){
+ box-shadow:inset 0 1px 0 #ffffff18,4px 5px 0 var(--paper-layer),5px 7px 0 var(--paper-shadow),0 15px 24px #0004;
+}
+#cimora-canvas.canvas-fantasy-experiment[data-theme=dark] .canvas-node-tools{box-shadow:inset 0 1px 0 #ffffff18,3px 4px 0 var(--paper-layer),4px 6px 0 var(--paper-shadow)!important}
+#cimora-canvas.canvas-fantasy-experiment[data-theme=dark] :is(.composer-pill,.video-composer .composer-model,.video-composer .video-settings-trigger,.image-node-empty button,.video-node-empty button,.video-settings-content button,.bottom-options button){box-shadow:inset 0 1px 0 #ffffff18,0 2px 0 #151617}
+#cimora-canvas.canvas-fantasy-experiment[data-theme=dark] :is(.image-node-clean,.video-node-clean,.text-node-clean).is-selected{border-color:#e9bc55;box-shadow:inset 0 0 0 1px #a68740,5px 6px 0 #554b34,6px 8px 0 var(--paper-shadow)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme=dark] .react-flow__node.group-range-highlight>:is(div,article):first-child{outline-color:#e9bc55;box-shadow:5px 6px 0 #554b34,6px 8px 0 var(--paper-shadow)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme=dark] .react-flow__node.dragging>div:first-child{box-shadow:7px 10px 0 #0009,0 20px 28px #0005}
+#cimora-canvas.canvas-fantasy-experiment[data-theme=dark] .canvas-group-frame{border-color:#a0a0a080;background:#ffffff04}
+#cimora-canvas.canvas-fantasy-experiment[data-theme=dark] :is(.canvas-bottom-toolbar button,.canvas-node-tools button,.ct-capsule button):hover:not(:disabled){box-shadow:inset 0 0 0 1px #929292}
+#cimora-canvas.canvas-fantasy-experiment[data-theme=light][data-palette=neutral]{
+ --canvas-bg:#e2e4dc;--canvas-panel:#f4efdf;--canvas-raised:#e4dfcd;--canvas-input:#fbf7ed;
+ --canvas-text:#354342;--canvas-muted:#68716a;--canvas-icon:#536b62;--canvas-node-border:#a9b09b;
+ --canvas-border:#b9b6a4;--canvas-grid:#465e5415;--canvas-dots:#465e5460;
+ --paper-layer:#b7b09a;--paper-shadow:#8e998e;--paper-caption:#465c55;
+}
+#cimora-canvas.canvas-fantasy-experiment[data-theme=light][data-palette=sky]{
+ --canvas-bg:#a9c8cf;--canvas-panel:#eaf0e4;--canvas-raised:#d1e0d8;--canvas-input:#f2f5eb;
+ --canvas-text:#294a51;--canvas-muted:#56767b;--canvas-icon:#346c7c;--canvas-node-border:#81a7ab;
+ --canvas-border:#9fb6ae;--canvas-grid:#31596c15;--canvas-dots:#31596c60;
+ --paper-layer:#91aaa5;--paper-shadow:#607e86;--paper-caption:#294e59;
+}
+#cimora-canvas.canvas-fantasy-experiment[data-theme=light][data-palette=bubblegum]{
+ --canvas-bg:#d8bdc7;--canvas-panel:#f4e7d0;--canvas-raised:#e6d4c5;--canvas-input:#fff1df;
+ --canvas-text:#643c53;--canvas-muted:#856b73;--canvas-icon:#8b4f70;--canvas-node-border:#b38b9a;
+ --canvas-border:#c3a0a6;--canvas-grid:#78496315;--canvas-dots:#78496360;
+ --paper-layer:#b99c99;--paper-shadow:#8d6e80;--paper-caption:#6e405b;
+}
+/* Theme-aware secondary controls and readable labels on the map. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme] :is(.video-composer .composer-model,.video-composer .video-settings-trigger,.video-duration output,.canvas-node-choice i){background:var(--canvas-raised);color:var(--canvas-text)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .canvas-group-frame header{color:var(--paper-caption)}
+/* Groups need a distinct surface, rather than a barely visible canvas tint. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme][data-palette]{--group-bg:#f7f1df40;--group-border:#68796c;--group-heading:#d5ddc966;--group-text:#263d33}
+#cimora-canvas.canvas-fantasy-experiment[data-theme=dark][data-palette=neutral]{--group-bg:#343c4666;--group-border:#8b9aaa;--group-heading:#46536380;--group-text:#f1f4f8}
+#cimora-canvas.canvas-fantasy-experiment[data-theme=light][data-palette=sky]{--group-bg:#dcedf440;--group-border:#39758a;--group-heading:#b7d5e266;--group-text:#193f50}
+#cimora-canvas.canvas-fantasy-experiment[data-theme=light][data-palette=bubblegum]{--group-bg:#fae9f340;--group-border:#9b4c7a;--group-heading:#e9c5db66;--group-text:#61274b}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .canvas-group-frame{background:var(--group-bg);border:2px solid var(--group-border);border-radius:3px;box-shadow:3px 4px 0 #15232b24}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .canvas-group-frame header{background:var(--group-heading);color:var(--group-text);border-bottom:1px solid var(--group-border);min-height:44px;font-weight:700}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .react-flow__node-groupNode.selected .canvas-group-frame{border-color:var(--group-text);box-shadow:0 0 0 3px var(--group-border),4px 5px 0 #15232b30}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .resource-preview{background:linear-gradient(150deg,var(--canvas-raised) 65%,var(--paper-layer) 65%)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .canvas-status{color:var(--paper-caption)}
+#cimora-canvas.canvas-fantasy-experiment :is(.ct-quick-panel,.ct-popover,.composer-popover,.canvas-bottom-popover){max-width:calc(100vw - 32px)}
+#cimora-canvas.canvas-fantasy-experiment .composer-footer{row-gap:12px}
+#cimora-canvas.canvas-fantasy-experiment .resource-scroll{padding-bottom:8px}
+#cimora-canvas.canvas-fantasy-experiment button:focus-visible{outline:2px solid #a67521;outline-offset:3px}
+@media(max-width:700px){
+ #cimora-canvas.canvas-fantasy-experiment .canvas-resource-panel{width:340px;max-width:calc(100vw - 32px);bottom:94px}
+ #cimora-canvas.canvas-fantasy-experiment .ct-quick-panel{width:340px;bottom:98px;max-height:38dvh;padding:14px}
+ #cimora-canvas.canvas-fantasy-experiment .composer-heading{gap:10px;flex-wrap:wrap}
+ #cimora-canvas.canvas-fantasy-experiment .composer-footer{gap:8px}
+ #cimora-canvas.canvas-fantasy-experiment .composer-pill{max-width:180px}
+ #cimora-canvas.canvas-fantasy-experiment .composer-estimate{margin-left:0;flex:1}
+ #cimora-canvas.canvas-fantasy-experiment .image-ratio-options{grid-template-columns:repeat(3,minmax(0,1fr))}
+ #cimora-canvas.canvas-fantasy-experiment .image-size-heading{align-items:flex-start;flex-direction:column}
+ #cimora-canvas.canvas-fantasy-experiment .canvas-theme-options button{font-size:12px;padding:10px 8px}
+}
+@media(max-height:600px){
+ #cimora-canvas.canvas-fantasy-experiment .canvas-bottom-popover{max-height:calc(100dvh - 170px);overflow:auto}
+ #cimora-canvas.canvas-fantasy-experiment .ct-quick-panel{max-height:calc(100dvh - 200px)}
+}
+@media(prefers-reduced-motion:reduce){#cimora-canvas.canvas-fantasy-experiment *{transition:none}}
+
+/* Open style atlas: decorative SVG stays behind accessible HTML controls. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .video-preset-dialog.style{width:1100px;max-width:calc(100vw - 32px);max-height:92dvh;padding:12px 10px 18px 75px;border:0;border-radius:0;background:transparent;color:#543b2c;color-scheme:light;box-shadow:none;overflow:auto}
+#cimora-canvas .style-atlas{font-family:"Trebuchet MS",Arial,"Microsoft YaHei",sans-serif;position:relative;isolation:isolate;height:740px;filter:drop-shadow(0 18px 22px #0006)}
+#cimora-canvas .atlas-art{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+#cimora-canvas .atlas-content{box-sizing:border-box;height:100%;display:flex;flex-direction:column;padding:60px 7% 80px}
+#cimora-canvas .atlas-heading{display:flex;align-items:center;justify-content:space-between;gap:35px;margin:0 0 12px;border-bottom:1px solid #a3824f55;padding-bottom:12px}
+#cimora-canvas .atlas-heading small{font-size:9px;letter-spacing:.18em;color:#8a704f;margin:0;opacity:1}
+#cimora-canvas .atlas-heading h2{font-family:Impact,"Arial Black","Microsoft YaHei",sans-serif;font-size:30px;font-weight:900;letter-spacing:.045em;text-transform:uppercase;line-height:1.15;margin:5px 0 0;color:#693b29;text-shadow:0 1px 0 #fff5d3}
+#cimora-canvas .atlas-heading label{display:flex;align-items:center;gap:8px;border-bottom:1px solid #a58a60;padding:8px;max-width:44%;color:#806746}
+#cimora-canvas .atlas-heading input{width:100%;min-width:0;background:transparent;border:0;outline:none;color:#543b2c;font-size:13px}
+#cimora-canvas .atlas-heading input::placeholder{color:#8a7557}
+#cimora-canvas .atlas-index{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:11px;color:#8a7050;margin-bottom:10px}
+#cimora-canvas .atlas-index select{margin-left:8px;background:#ede0bd;border:1px solid #baa47b;border-radius:2px;color:#61452e;padding:4px;max-width:180px}
+#cimora-canvas .atlas-spread{display:grid;grid-template-columns:1fr 1fr;gap:10%;flex:1;min-height:0}
+#cimora-canvas .atlas-leaf{position:relative;display:flex;flex-direction:column;min-width:0;min-height:0;overflow-y:auto;padding-bottom:24px;box-sizing:border-box}
+#cimora-canvas .atlas-leaf article{position:relative;flex-shrink:0;min-width:0;border-bottom:1px solid #a5824f50;padding:13px 0;min-height:112px}
+#cimora-canvas .atlas-leaf article:last-of-type{border-bottom:0}
+#cimora-canvas .atlas-entry{display:flex;gap:16px;align-items:center;width:100%;height:100%;text-align:left;padding:5px 20px 5px 0;background:transparent;border:0;border-radius:2px;color:#543b2c;transition:background .15s}
+#cimora-canvas .atlas-entry:hover{background:#b58b3420}
+#cimora-canvas .atlas-entry img{width:82px;height:86px;object-fit:cover;flex-shrink:0;border:3px solid #f7e8bc;outline:1px solid #b29155;box-shadow:3px 3px 0 #9a783c35;clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px)}
+#cimora-canvas .atlas-entry span{display:flex;flex-direction:column;gap:7px}
+#cimora-canvas .atlas-entry b{font-family:Impact,"Arial Black","Microsoft YaHei",sans-serif;font-size:21px;line-height:1.15;font-weight:900;letter-spacing:.035em;text-transform:uppercase;color:#663c29;text-shadow:0 1px 0 #fff5d3}
+#cimora-canvas .atlas-entry em{font-size:13px;font-weight:600;line-height:1.4;font-style:normal;color:#82664c}
+#cimora-canvas .atlas-entry strong{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#397e6a}
+#cimora-canvas .atlas-favorite{position:absolute;right:0;top:12px;padding:5px 4px 10px;background:#d9c89f;color:#806747;clip-path:polygon(0 0,100% 0,100% 100%,50% 80%,0 100%)}
+#cimora-canvas .atlas-favorite[aria-pressed=true]{background:#7a4632;color:#ffe097}
+#cimora-canvas .atlas-page-number{position:absolute;bottom:0;left:0;right:0;text-align:center;font-family:Impact,"Arial Black",sans-serif;font-size:15px;letter-spacing:.08em;color:#9c835f}
+#cimora-canvas .atlas-footer{display:flex;align-items:center;justify-content:space-between;margin-top:12px;font-size:11px;color:#8c714d}
+#cimora-canvas .atlas-footer button{padding:7px 12px;border:1px solid #bda779;background:#e7d7b0;border-radius:2px;color:#67482f}
+#cimora-canvas .atlas-footer button:disabled{opacity:.35;cursor:default}
+#cimora-canvas .atlas-bookmarks{position:absolute;left:-61px;top:122px;width:100px;display:flex;flex-direction:column;gap:14px;z-index:1}
+#cimora-canvas .atlas-bookmarks button{position:relative;padding:12px 10px;background:#488d79;color:#f7efd3;text-align:center;font-family:"Arial Black","Microsoft YaHei",sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:.02em;border:1px solid #88ad8c;box-shadow:2px 4px 0 #263f3555;transform:rotate(-3deg);font-size:12px;clip-path:polygon(0 0,100% 0,96% 100%,4% 95%)}
+#cimora-canvas .atlas-bookmarks button[aria-pressed=true]{background:#7b4230;border-color:#d2ac6b;transform:translateX(-8px) rotate(-3deg);outline:2px solid #b18c55;outline-offset:-5px}
+#cimora-canvas .atlas-bookmarks small{margin:3px 0 0;font-family:Impact,"Arial Black",sans-serif;font-size:22px;line-height:1;font-weight:900;letter-spacing:.04em;color:#fff3d1;opacity:1}
+#cimora-canvas .atlas-close{position:absolute;right:5.4%;top:18px;z-index:2;display:flex;align-items:center;justify-content:center;width:34px;height:53px;padding:0 0 9px;color:#d7b77b!important;background:linear-gradient(90deg,#542e25,#744330 45%,#5d3328);border:0;border-radius:0;clip-path:polygon(0 0,100% 0,100% 100%,50% 84%,0 100%);box-shadow:inset 2px 0 0 #ae815744,inset -2px 0 0 #27181355;transition:filter .15s,color .15s}
+#cimora-canvas .atlas-close::before{content:'';position:absolute;inset:4px 4px 12px;border-left:1px solid #c29a5b88;border-right:1px solid #c29a5b88;pointer-events:none}
+#cimora-canvas .atlas-close svg{width:14px;height:14px;stroke-width:1.7;filter:drop-shadow(0 1px 0 #311d18)}
+#cimora-canvas .atlas-close:hover{filter:brightness(1.2);color:#ffe5ab!important}
+#cimora-canvas .atlas-close:focus-visible{outline:0;box-shadow:inset 0 0 0 2px #ffe5ab;filter:brightness(1.2)}
+#cimora-canvas .atlas-empty{font-size:14px;color:#806747;margin-top:40px}
+@media(max-width:700px){
+ #cimora-canvas.canvas-fantasy-experiment[data-theme] .video-preset-dialog.style{padding-left:40px;max-width:calc(100vw - 12px)}
+ #cimora-canvas .style-atlas{height:1180px}
+ #cimora-canvas .atlas-content{padding:55px 8% 90px}
+ #cimora-canvas .atlas-bookmarks{left:-32px;width:65px;gap:10px}
+ #cimora-canvas .atlas-bookmarks button{font-size:9px;padding:10px 4px}
+ #cimora-canvas .atlas-heading{gap:12px;flex-wrap:wrap}
+ #cimora-canvas .atlas-heading label{max-width:100%;width:100%}
+ #cimora-canvas .atlas-spread{grid-template-columns:1fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:16px}
+ #cimora-canvas .atlas-leaf{min-height:0}
+ #cimora-canvas .atlas-art{opacity:.97}
+ #cimora-canvas .atlas-entry img{width:66px;height:74px}
+ #cimora-canvas .atlas-entry b{font-size:18px}
+ #cimora-canvas .atlas-index{align-items:flex-start}
+ #cimora-canvas .atlas-index select{max-width:125px}
+}
+
+/* One continuous full-height paper surface bends and turns around the spine. */
+#cimora-canvas .atlas-spread{position:relative}
+#cimora-canvas .style-atlas{perspective:2200px}
+#cimora-canvas .atlas-spread.is-turning>.atlas-leaf{pointer-events:none}
+#cimora-canvas .atlas-turn-sheet{position:absolute;top:6.3%;bottom:10.1%;width:45.7%;z-index:4;pointer-events:none;transform-style:preserve-3d;animation:atlas-flex-turn 760ms cubic-bezier(.42,0,.2,1) both;--turn-angle:-180deg}
+#cimora-canvas .atlas-turn-sheet.next{left:50%;transform-origin:left center}
+#cimora-canvas .atlas-turn-sheet.previous{right:50%;transform-origin:right center;--turn-angle:180deg}
+#cimora-canvas .atlas-paper-face{position:absolute;inset:0;overflow:hidden;box-shadow:inset 0 -2px 0 #cdbb91;backface-visibility:hidden;background:#f4ebd2;filter:url(#atlas-continuous-curl);transform:translateZ(.2px)}
+#cimora-canvas .atlas-paper-face.back{transform:rotateY(180deg) translateZ(.2px);background:#f7eed8}
+#cimora-canvas .atlas-turn-content{position:relative;height:100%;box-sizing:border-box;background:repeating-linear-gradient(105deg,#98794d08 0 1px,transparent 1px 9px),#f4ebd2}
+#cimora-canvas .atlas-turn-heading,#cimora-canvas .atlas-turn-index,#cimora-canvas .atlas-turn-rows,#cimora-canvas .atlas-turn-footer{position:absolute}
+#cimora-canvas .atlas-turn-heading{height:71px;border-bottom:1px solid #a3824f55}
+#cimora-canvas .atlas-turn-heading small{font-size:9px;letter-spacing:.18em;color:#8a704f;margin:0;opacity:1}
+#cimora-canvas .atlas-turn-heading h2{font-family:Impact,"Arial Black",sans-serif;font-size:30px;font-weight:900;letter-spacing:.045em;text-transform:uppercase;line-height:1.15;margin:5px 0 0;color:#693b29}
+#cimora-canvas .atlas-turn-heading label{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:16px;color:#806746;font-size:13px;border-bottom:1px solid #a58a60;padding:8px}
+#cimora-canvas .atlas-turn-index{font-size:11px;color:#8a7050;display:flex;justify-content:space-between}
+#cimora-canvas .atlas-turn-index i{font-style:normal;display:inline-block;background:#ede0bd;border:1px solid #baa47b;padding:4px;margin-left:8px}
+#cimora-canvas .atlas-turn-sheet.next .front .atlas-turn-index,#cimora-canvas .atlas-turn-sheet.previous .back .atlas-turn-index{justify-content:flex-end}
+#cimora-canvas .atlas-turn-footer{font-size:11px;color:#8c714d;display:flex}
+#cimora-canvas .atlas-turn-footer span{padding:7px 12px;border:1px solid #bda779;background:#e7d7b0;border-radius:2px}
+#cimora-canvas .next .front .atlas-turn-footer,#cimora-canvas .previous .back .atlas-turn-footer{justify-content:flex-end}
+#cimora-canvas .atlas-is-turning .atlas-content{pointer-events:none}
+#cimora-canvas .atlas-turn-content article{position:relative;box-sizing:border-box;border-bottom:1px solid #a5824f50;padding:13px 0;min-height:112px}
+#cimora-canvas .atlas-turn-content article:last-child{border-bottom:0}
+#cimora-canvas .atlas-cast-shadow{position:absolute;top:6.3%;bottom:10.1%;width:45.7%;z-index:3;pointer-events:none;transform-origin:left;background:linear-gradient(90deg,#49351e45,transparent 80%);animation:atlas-moving-shadow 760ms ease both}
+#cimora-canvas .atlas-cast-shadow.next{left:50%}
+#cimora-canvas .atlas-cast-shadow.previous{right:50%;transform-origin:right;background:linear-gradient(-90deg,#49351e45,transparent 80%)}
+@keyframes atlas-flex-turn{0%{transform:rotateY(0)}100%{transform:rotateY(var(--turn-angle))}}
+
+
+@keyframes atlas-moving-shadow{0%,100%{opacity:0;scale:.1 1}40%,65%{opacity:1;scale:1 1}}
+@media(prefers-reduced-motion:reduce){#cimora-canvas .atlas-turn-sheet,#cimora-canvas .atlas-cast-shadow{animation:none}}
+
+#cimora-canvas .atlas-curl-definition{position:absolute;pointer-events:none}
+#cimora-canvas .atlas-paper-face::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,transparent 12%,#6a4c242b 42%,#fffbe636 66%,transparent 90%);animation:atlas-curl-light 760ms ease both}
+@keyframes atlas-curl-light{0%,100%{opacity:0}30%,65%{opacity:1}}
+@media(prefers-reduced-motion:reduce){#cimora-canvas .atlas-paper-face{filter:none}#cimora-canvas .atlas-paper-face::after{animation:none;opacity:0}}
+
+/* Full-resolution reference viewer sits above the book, preserving its current spread. */
+#cimora-canvas .atlas-entry .atlas-thumbnail{position:relative;display:block;flex-shrink:0}
+#cimora-canvas .atlas-thumbnail-zoom{position:absolute;right:3px;bottom:3px;width:23px;height:23px;padding:4px;background:#493622cc;color:#fff2ce;opacity:0;transition:opacity .15s}
+#cimora-canvas .atlas-preview-trigger:hover .atlas-thumbnail-zoom,#cimora-canvas .atlas-preview-trigger:focus-visible .atlas-thumbnail-zoom{opacity:1}
+#cimora-canvas .atlas-quick-apply{display:block;margin:-14px 0 0 98px;position:relative;z-index:1;padding:3px 0;background:none;border:0;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#397e6a}
+#cimora-canvas .atlas-preview{position:fixed;inset:0;margin:auto;width:1160px;max-width:calc(100vw - 40px);max-height:90dvh;padding:0;border:1px solid #b59355;border-radius:4px 16px 4px 4px;background:#201b17;color:#f3e8ce;box-shadow:0 25px 100px #0009;color-scheme:dark;overflow:auto}
+#cimora-canvas .atlas-preview::backdrop{background:#090806c9}
+#cimora-canvas .atlas-preview-layout{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 300px;min-height:500px}
+#cimora-canvas .atlas-preview-image{display:flex;align-items:center;justify-content:center;min-width:0;padding:24px;background:#151311;min-height:450px}
+#cimora-canvas .atlas-preview-image img{display:block;width:auto;height:auto;max-width:100%;max-height:78dvh;object-fit:contain}
+#cimora-canvas .atlas-preview aside{display:flex;flex-direction:column;padding:60px 26px 28px;background:repeating-linear-gradient(105deg,#98794d05 0 1px,transparent 1px 9px),#f4ebd2;color:#62462f;border-left:1px solid #b59355}
+#cimora-canvas .atlas-preview aside small{font-size:10px;letter-spacing:.16em;color:#927953;opacity:1;margin:0}
+#cimora-canvas .atlas-preview h2{font:900 28px/1.15 Impact,"Arial Black",sans-serif;letter-spacing:.04em;text-transform:uppercase;margin:12px 0 20px;color:#663c29}
+#cimora-canvas .atlas-preview p{font-size:14px;line-height:1.65}
+#cimora-canvas .atlas-preview .atlas-preview-note{font-size:12px;color:#897456;margin:20px 0 28px}
+#cimora-canvas .atlas-preview button{cursor:pointer}
+#cimora-canvas .atlas-preview .atlas-preview-apply{background:#e6bd61;color:#43301e;border:1px solid #ad843e;padding:12px;font-weight:700;border-radius:2px 8px 2px 2px}
+#cimora-canvas .atlas-preview .atlas-preview-save{display:flex;align-items:center;justify-content:center;gap:8px;background:transparent;border:1px solid #bda779;color:#785635;padding:10px;margin:12px 0 28px}
+#cimora-canvas .atlas-preview .atlas-preview-save[aria-pressed=true]{background:#dfceaa;color:#693c29}
+#cimora-canvas .atlas-preview nav{display:flex;align-items:center;justify-content:space-between;margin-top:auto;font-size:12px}
+#cimora-canvas .atlas-preview nav button{padding:9px 15px;background:#e7d7b0;color:#67482f;border:1px solid #bda779}
+#cimora-canvas .atlas-preview button:disabled{opacity:.4;cursor:default}
+#cimora-canvas .atlas-preview .atlas-preview-close{position:absolute;right:12px;top:12px;z-index:2;display:grid;place-items:center;width:32px;height:32px;background:#704735;color:#f9e8bc;border:1px solid #b59355;border-radius:2px}
+@media(max-width:700px){
+ #cimora-canvas .atlas-quick-apply{margin-left:82px}
+ #cimora-canvas .atlas-preview{max-width:calc(100vw - 20px)}
+ #cimora-canvas .atlas-preview-layout{grid-template-columns:1fr}
+ #cimora-canvas .atlas-preview-image{min-height:240px;padding:16px}
+ #cimora-canvas .atlas-preview-image img{max-height:55dvh}
+ #cimora-canvas .atlas-preview aside{padding:24px;border-left:0;border-top:1px solid #b59355}
+}
+
+/* Favorite feedback only animates on a user toggle, never on page entry. */
+#cimora-canvas :is(.atlas-favorite,.atlas-preview-save) svg{fill:transparent;transform-origin:center;transform-box:fill-box;transition:fill .16s ease,color .16s ease}
+#cimora-canvas .atlas-favorite[aria-pressed=true] svg{fill:#ffe097;stroke:#ffe097}
+#cimora-canvas .atlas-preview-save[aria-pressed=true] svg{fill:#d5a33a;stroke:#926421}
+#cimora-canvas :is(.atlas-favorite,.atlas-preview-save){transition:background-color .16s ease,color .16s ease}
+@media(prefers-reduced-motion:reduce){#cimora-canvas :is(.atlas-favorite,.atlas-preview-save),#cimora-canvas :is(.atlas-favorite,.atlas-preview-save) svg{transition:none}}
+
+/* Camera directions are pinned notices, sharing the atlas materials. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .video-preset-dialog.motion{width:820px;max-width:calc(100vw - 32px);height:780px;max-height:90dvh;padding:12px;border:2px solid #a77946;border-radius:9px 18px 6px 6px;background:repeating-linear-gradient(28deg,#ffffff03 0 1px,transparent 1px 8px),#603b2d;color:#62462f;color-scheme:light;box-shadow:inset 0 0 0 4px #774932,inset 0 0 0 5px #c49d5c,4px 6px 0 #38271f,0 24px 70px #0008;overflow:hidden}
+#cimora-canvas .motion-board{height:100%;min-height:0;display:flex;flex-direction:column;background:#e4d5af;border:1px solid #bd9b61}
+#cimora-canvas .motion-board-heading{flex-shrink:0;margin:0;padding:22px 24px 14px;background:#f4ebd2;border-bottom:1px solid #bda779;gap:15px}
+#cimora-canvas .motion-board-heading small{margin:0;opacity:1;font-size:9px;letter-spacing:.18em;color:#93754e}
+#cimora-canvas .motion-board-heading h2{margin:6px 0 0;font:900 28px/1.15 Impact,"Arial Black",sans-serif;text-transform:uppercase;letter-spacing:.04em;color:#663c29}
+#cimora-canvas .motion-board-heading .motion-board-close{display:grid;place-items:center;width:32px;height:32px;border:1px solid #9e793f;color:#54391e;background:linear-gradient(135deg,#e3c485,#b38a4f);border-radius:3px;box-shadow:inset 0 0 0 3px #d9b778,0 2px 0 #876239}
+#cimora-canvas .motion-board-close:hover{filter:brightness(1.1)}
+#cimora-canvas .motion-board-controls{display:flex;justify-content:space-between;gap:12px;padding:14px 24px;flex-shrink:0;background:#f4ebd2;border-bottom:1px solid #bda779}
+#cimora-canvas .motion-board-controls nav{display:flex;gap:7px}
+#cimora-canvas .motion-board-controls nav button{padding:8px 12px;font-size:12px;font-weight:700;background:#e5d4ae;color:#785331;border:1px solid #bda779;border-radius:2px 7px 2px 2px}
+#cimora-canvas .motion-board-controls nav button[aria-pressed=true]{background:#764934;color:#fff0ca;border-color:#764934}
+#cimora-canvas .motion-board-controls label{display:flex;align-items:center;gap:8px;padding:6px 10px;border-bottom:1px solid #a58a60;color:#806746;min-width:0}
+#cimora-canvas .motion-board-controls input{width:150px;min-width:0;background:transparent;border:0;outline:0;color:#543b2c;font-size:12px}
+#cimora-canvas .motion-board-controls input::placeholder{color:#8a7557}
+#cimora-canvas .motion-board-scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:24px;scrollbar-width:thin;scrollbar-color:#ac8447 #d2be93;background:linear-gradient(#0000000a,transparent 22px,transparent calc(100% - 22px),#00000012),repeating-linear-gradient(105deg,#76582e05 0 1px,transparent 1px 6px)}
+#cimora-canvas .motion-notices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+#cimora-canvas .motion-notice{position:relative;padding:16px 12px 12px;background:#faf0d4;border:1px solid #c6b083;border-radius:2px 10px 2px 2px;box-shadow:3px 4px 0 #99794530,0 5px 12px #50391c12;transition:border-color .18s,box-shadow .18s}
+#cimora-canvas .motion-notice:hover,#cimora-canvas .motion-notice:focus-within{border-color:#ab7b31;box-shadow:3px 5px 0 #99794544,0 8px 16px #50391c20}
+#cimora-canvas .motion-notice-pin{position:absolute;left:calc(50% - 4px);top:5px;width:8px;height:8px;background:radial-gradient(circle at 30% 25%,#f6d996,#9a713d 70%);border:1px solid #a8804b;border-radius:50%;box-shadow:1px 2px 1px #50391c55}
+#cimora-canvas .motion-diagram{position:relative;overflow:hidden;border:1px solid #a89973;background:#496e63}
+#cimora-canvas .motion-diagram svg{display:block;width:100%;height:auto}
+#cimora-canvas .motion-diagram>span{position:absolute;bottom:5px;left:8px;font-size:8px;letter-spacing:.1em;color:#f5e8c7}
+#cimora-canvas .motion-notice-copy{padding:12px 3px 0}
+#cimora-canvas .motion-notice-copy h3{font:900 21px/1.2 Impact,"Arial Black",sans-serif;letter-spacing:.035em;text-transform:uppercase;color:#663c29;margin:0 0 7px}
+#cimora-canvas .motion-notice-copy p{font-size:12px;line-height:1.5;color:#82664c;margin:0 0 12px;min-height:36px}
+#cimora-canvas .motion-notice-copy button{padding:7px 12px;background:#e5bf69;border:1px solid #b08b45;border-radius:2px;color:#5d4126;font-size:11px;font-weight:700}
+#cimora-canvas .motion-board-footer{display:flex;justify-content:space-between;gap:18px;flex-shrink:0;padding:12px 24px;border-top:1px solid #bda779;background:#f4ebd2;font-size:10px;line-height:1.5;color:#8a7050}
+#cimora-canvas .motion-board-empty{padding:60px 20px;text-align:center;color:#806747;font-size:14px}
+#cimora-canvas .motion-camera,#cimora-canvas .motion-subject{transform-box:fill-box;transform-origin:center}
+#cimora-canvas .motion-notice:is(:hover,:focus-within) .motion-camera{animation:motion-demo 2.4s ease-in-out infinite}
+#cimora-canvas .movement-fixed .motion-camera{animation:none!important}
+#cimora-canvas :is(.movement-pan-left,.movement-truck-left){--motion-end:translateX(-24px)}
+#cimora-canvas :is(.movement-pan-right,.movement-truck-right,.movement-follow){--motion-end:translateX(24px)}
+#cimora-canvas :is(.movement-tilt-up,.movement-crane-up){--motion-end:translateY(-16px)}
+#cimora-canvas :is(.movement-tilt-down,.movement-crane-down){--motion-end:translateY(16px)}
+#cimora-canvas .movement-pan-left{--motion-end:perspective(200px) rotateY(-25deg)}
+#cimora-canvas .movement-pan-right{--motion-end:perspective(200px) rotateY(25deg)}
+#cimora-canvas .movement-tilt-up{--motion-end:perspective(200px) rotateX(25deg)}
+#cimora-canvas .movement-tilt-down{--motion-end:perspective(200px) rotateX(-25deg)}
+#cimora-canvas .movement-orbit-up{--motion-end:translate(18px,-15px) rotate(-12deg)}
+#cimora-canvas .movement-orbit-down{--motion-end:translate(-18px,15px) rotate(12deg)}
+#cimora-canvas .movement-dolly-in{--motion-end:translateY(10px) scale(.72)}
+#cimora-canvas .movement-dolly-out{--motion-end:translateY(-8px) scale(1.2)}
+#cimora-canvas .movement-zoom .motion-camera{animation:none!important}
+#cimora-canvas .motion-notice:is(:hover,:focus-within) .movement-zoom .motion-subject{animation:motion-zoom 2.4s ease-in-out infinite}
+#cimora-canvas .motion-notice:is(:hover,:focus-within) .movement-follow .motion-subject{animation:motion-demo 2.4s ease-in-out infinite}
+@keyframes motion-demo{0%,100%{transform:none}65%{transform:var(--motion-end)}}
+@keyframes motion-zoom{0%,100%{transform:scale(1)}65%{transform:scale(1.4)}}
+@media(max-width:600px){#cimora-canvas .motion-notices{grid-template-columns:1fr}#cimora-canvas .motion-board-controls{flex-wrap:wrap;padding:12px 16px}#cimora-canvas .motion-board-heading{padding:18px 16px 12px}#cimora-canvas .motion-board-scroll{padding:18px}#cimora-canvas .motion-board-footer{padding:10px 16px}#cimora-canvas .motion-board-controls label{flex:1}}
+@media(prefers-reduced-motion:reduce){#cimora-canvas .motion-notice .motion-camera,#cimora-canvas .motion-notice .motion-subject{animation:none!important}}
+
+/* The paper is revealed between two moving rollers; its contents never scale. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .video-preset-dialog.motion{width:860px;height:820px;max-height:92dvh;padding:12px 5px;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:hidden}
+#cimora-canvas .motion-scroll-shell{height:100%;position:relative;box-sizing:border-box;padding:28px 25px;isolation:isolate}
+#cimora-canvas .motion-scroll-shell .motion-board{position:relative;border:0;border-left:1px solid #c6ac77;border-right:1px solid #c6ac77;background:#f4ebd2;box-shadow:inset 5px 0 0 #dfceaa,inset -5px 0 0 #dfceaa,3px 4px 0 #493126}
+#cimora-canvas .motion-scroll-shell .motion-board::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:2;box-shadow:inset 0 7px 0 #b8a07555,inset 0 -7px 0 #b8a07555}
+#cimora-canvas .motion-scroll-rod{position:absolute;left:2px;right:2px;height:34px;z-index:4;border:1px solid #542d24;border-radius:0;background:linear-gradient(#a85d3e 0 19%,#7b4030 19% 72%,#4b2b25 72% 100%);box-shadow:0 4px 0 #35251f;clip-path:polygon(9px 0,calc(100% - 9px) 0,100% 9px,100% calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,0 calc(100% - 8px),0 9px)}
+#cimora-canvas .rod-top{top:11px;--roll-shift:calc(50cqh - 28px)}
+#cimora-canvas .rod-bottom{bottom:11px;--roll-shift:calc(-50cqh + 28px)}
+#cimora-canvas .motion-scroll-shell{container-type:size}
+#cimora-canvas .motion-scroll-rod::before,#cimora-canvas .motion-scroll-rod::after{content:'';position:absolute;top:0;bottom:0;width:27px;border:0;border-radius:0;background:linear-gradient(135deg,#e7cd8b 0 26%,#b79553 26% 72%,#795732 72%);box-shadow:inset 3px 0 0 #f2dfab66;clip-path:polygon(7px 0,100% 0,100% 100%,7px 100%,0 calc(100% - 7px),0 7px)}
+#cimora-canvas .motion-scroll-rod::before{left:5px}
+#cimora-canvas .motion-scroll-rod::after{right:5px}
+#cimora-canvas .motion-scroll-rod>span{position:absolute;inset:5px 39px;border-top:1px solid #d9b46d;border-bottom:1px solid #bb914d;pointer-events:none}
+#cimora-canvas .motion-scroll-rod .motion-scroll-close{position:absolute;right:5px;top:0;bottom:0;width:27px;z-index:2;display:grid;place-items:center;border:0;border-radius:0;color:#543623;background:linear-gradient(135deg,#e7cd8b 0 26%,#b79553 26% 72%,#795732 72%);box-shadow:inset 2px 0 0 #f2dfab66;cursor:pointer}
+#cimora-canvas .motion-scroll-close svg{width:14px;height:14px;stroke-width:2}
+#cimora-canvas .motion-scroll-close:hover{filter:brightness(1.15)}
+#cimora-canvas .scroll-opening .motion-board{animation:motion-paper-open 650ms cubic-bezier(.25,.7,.22,1) both;pointer-events:none}
+#cimora-canvas .scroll-opening .motion-scroll-rod{animation:motion-roller-open 650ms cubic-bezier(.25,.7,.22,1) both}
+#cimora-canvas .scroll-closing .motion-board{animation:motion-paper-close 350ms cubic-bezier(.55,.05,.75,.5) both;pointer-events:none}
+#cimora-canvas .scroll-closing .motion-scroll-rod{animation:motion-roller-close 350ms cubic-bezier(.55,.05,.75,.5) both}
+@keyframes motion-paper-open{from{clip-path:inset(50% 0)}to{clip-path:inset(0)}}
+@keyframes motion-paper-close{from{clip-path:inset(0)}to{clip-path:inset(50% 0)}}
+@keyframes motion-roller-open{from{transform:translateY(var(--roll-shift))}to{transform:translateY(0)}}
+@keyframes motion-roller-close{from{transform:translateY(0)}to{transform:translateY(var(--roll-shift))}}
+@media(max-width:600px){#cimora-canvas .motion-scroll-shell{padding-left:17px;padding-right:17px}#cimora-canvas .motion-scroll-shell .motion-board-heading h2{font-size:24px}}
+@media(prefers-reduced-motion:reduce){
+ #cimora-canvas .scroll-opening .motion-board,#cimora-canvas .scroll-opening .motion-scroll-rod{animation:motion-scroll-fade-in 150ms ease both}
+ #cimora-canvas .scroll-closing .motion-board,#cimora-canvas .scroll-closing .motion-scroll-rod{animation:motion-scroll-fade-out 150ms ease both}
+}
+@keyframes motion-scroll-fade-in{from{opacity:0}to{opacity:1}}
+@keyframes motion-scroll-fade-out{from{opacity:1}to{opacity:0}}
+
+/* Match the atlas: flat pigment, cut paper and deliberate hard-edged facets. */
+#cimora-canvas .motion-scroll-shell .motion-board-heading{background:#f4ebd2;border-color:#bda779}
+#cimora-canvas .motion-scroll-shell .motion-board-controls,#cimora-canvas .motion-scroll-shell .motion-board-footer{background:#f4ebd2}
+#cimora-canvas .motion-scroll-shell .motion-board-scroll{background:repeating-linear-gradient(105deg,#98794d06 0 1px,transparent 1px 8px),#ede1c3}
+#cimora-canvas .motion-scroll-shell .motion-notice{background:#faf0d4;border:1px solid #baa475;border-radius:0;box-shadow:3px 4px 0 #c5b18a;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,8px 100%,0 calc(100% - 8px))}
+#cimora-canvas .motion-scroll-shell .motion-notice:hover,#cimora-canvas .motion-scroll-shell .motion-notice:focus-within{border-color:#94703c;box-shadow:3px 4px 0 #b79d6d}
+#cimora-canvas .motion-scroll-shell .motion-notice-pin{border:0;border-radius:0;background:linear-gradient(135deg,#dfc47f 0 48%,#8e6839 48%);box-shadow:1px 2px 0 #6c4c2b55;rotate:45deg;width:7px;height:7px}
+#cimora-canvas .motion-scroll-shell .motion-notice-copy button{border-radius:0;clip-path:polygon(0 0,calc(100% - 5px) 0,100% 5px,100% 100%,0 100%);background:#dfb65a;box-shadow:0 2px 0 #a37b36}
+
+/* Faceted rolled parchment with exposed wooden spindles, matching the style atlas. */
+#cimora-canvas .motion-scroll-shell{padding:67px 48px 65px}
+#cimora-canvas .motion-scroll-paper{position:absolute;top:49px;bottom:48px;left:35px;width:calc(100% - 70px);height:calc(100% - 97px);z-index:-1;pointer-events:none}
+#cimora-canvas .motion-scroll-shell .motion-board{background:transparent;border:0;box-shadow:none}
+#cimora-canvas .motion-scroll-shell .motion-board::after{box-shadow:inset 0 12px 12px -12px #76634488,inset 0 -12px 12px -12px #76634488}
+#cimora-canvas .motion-scroll-shell :is(.motion-board-heading,.motion-board-controls,.motion-board-footer){background:transparent}
+#cimora-canvas .motion-scroll-shell .motion-board-scroll{background:transparent}
+#cimora-canvas .motion-scroll-rod{left:0;right:0;height:88px;background:none;border:0;border-radius:0;box-shadow:none;clip-path:none}
+#cimora-canvas .motion-scroll-rod::before,#cimora-canvas .motion-scroll-rod::after{display:none}
+#cimora-canvas .scroll-roller-art{display:block;width:100%;height:100%;overflow:visible}
+#cimora-canvas .rod-top{top:0;--roll-shift:calc(50cqh - 44px)}
+#cimora-canvas .rod-bottom{bottom:0;--roll-shift:calc(-50cqh + 44px)}
+#cimora-canvas .rod-bottom .scroll-roller-art{transform:rotate(180deg)}
+#cimora-canvas .motion-scroll-rod .motion-scroll-close{right:1.5%;top:27px;bottom:auto;width:30px;height:31px;background:#4b3929;border:1px solid #99815a;color:#eddfb4;box-shadow:2px 3px 0 #302a22;clip-path:polygon(5px 0,100% 0,100% calc(100% - 5px),calc(100% - 5px) 100%,0 100%,0 5px)}
+#cimora-canvas .scroll-opening .motion-scroll-paper{animation:motion-paper-open 650ms cubic-bezier(.25,.7,.22,1) both}
+#cimora-canvas .scroll-closing .motion-scroll-paper{animation:motion-paper-close 350ms cubic-bezier(.55,.05,.75,.5) both}
+#cimora-canvas .scroll-opening .scroll-paper-facets{animation:scroll-facet-unroll 650ms ease-out both;transform-origin:center;transform-box:fill-box}
+#cimora-canvas .scroll-closing .scroll-paper-facets{animation:scroll-facet-unroll 350ms ease-in reverse both;transform-origin:center;transform-box:fill-box}
+@keyframes scroll-facet-unroll{0%{transform:scaleY(1.12) translateY(-2px)}65%{transform:scaleY(1.04)}100%{transform:scaleY(1)}}
+@media(max-width:600px){#cimora-canvas .motion-scroll-shell{padding:54px 23px}#cimora-canvas .motion-scroll-rod{height:70px}#cimora-canvas .motion-scroll-paper{left:15px;width:calc(100% - 30px);top:42px;height:calc(100% - 84px)}#cimora-canvas .rod-top{--roll-shift:calc(50cqh - 35px)}#cimora-canvas .rod-bottom{--roll-shift:calc(-50cqh + 35px)}#cimora-canvas .motion-scroll-rod .motion-scroll-close{top:20px;width:26px;height:27px}}
+@media(prefers-reduced-motion:reduce){#cimora-canvas .scroll-opening .motion-scroll-paper{animation:motion-scroll-fade-in 150ms ease both}#cimora-canvas .scroll-closing .motion-scroll-paper{animation:motion-scroll-fade-out 150ms ease both}#cimora-canvas .scroll-paper-facets{animation:none!important}}
+
+/* The entire style book enters as one object; page-turn transforms stay separate. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .video-preset-dialog.style[open]{animation:atlas-book-enter 460ms cubic-bezier(.2,.75,.25,1) backwards;transform-origin:50% 60%}
+#cimora-canvas .video-preset-dialog.style[open]::backdrop{animation:atlas-backdrop-enter 300ms ease-out backwards}
+@keyframes atlas-book-enter{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes atlas-backdrop-enter{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+ #cimora-canvas.canvas-fantasy-experiment[data-theme] .video-preset-dialog.style[open]{animation:atlas-backdrop-enter 120ms ease-out backwards}
+ #cimora-canvas .video-preset-dialog.style[open]::backdrop{animation-duration:120ms}
+}
+
+/* Fit exactly two rows inside the desktop scroll viewport. */
+@media(min-width:601px){
+ #cimora-canvas .motion-scroll-shell .motion-board-heading{padding:12px 20px 10px}
+ #cimora-canvas .motion-scroll-shell .motion-board-controls{padding:9px 20px}
+ #cimora-canvas .motion-scroll-shell .motion-board-footer{padding:8px 20px}
+ #cimora-canvas .motion-scroll-shell .motion-board-scroll{container-type:size;padding:10px 16px 14px}
+ #cimora-canvas .motion-notices{gap:14px;grid-auto-rows:calc((100cqh - 14px)/2)}
+ #cimora-canvas .motion-scroll-shell .motion-notice{display:flex;flex-direction:column;min-height:0;padding:13px 10px 10px;box-sizing:border-box}
+ #cimora-canvas .motion-notice .motion-diagram{flex:1;min-height:0}
+ #cimora-canvas .motion-notice .motion-diagram svg{width:100%;height:100%}
+ #cimora-canvas .motion-notice-copy{flex-shrink:0;padding:7px 2px 0}
+ #cimora-canvas .motion-notice-copy h3{font-size:18px;margin-bottom:4px}
+ #cimora-canvas .motion-notice-copy p{font-size:11px;line-height:1.35;min-height:30px;margin:0 0 6px}
+ #cimora-canvas .motion-notice-copy button{padding:5px 10px}
+}
+@media(min-width:601px) and (max-height:760px){
+ #cimora-canvas .motion-notice-copy p{display:none}
+ #cimora-canvas .motion-board-heading small{display:none}
+ #cimora-canvas .motion-scroll-shell .motion-board-heading h2{font-size:23px;margin:0}
+ #cimora-canvas .motion-diagram>span{display:none}
+}
+
+/* Settings use a filled selection instead of an outline-only state. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .video-settings-content button[aria-pressed=true]{background:#e9bc55;color:#302d21;border-color:#b58a35;box-shadow:inset 0 1px 0 #ffe3a0,0 2px 0 #98702e;font-weight:700}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .video-settings-content button[aria-pressed=true]:hover:not(:disabled){background:#f0c96d;color:#302d21}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .video-settings-content button[aria-pressed=true] i{border-color:currentColor}
+/* Faceted credit plaque and compact canvas tools. */
+#cimora-canvas .ct-topbar{display:flex;align-items:center;gap:12px}
+#cimora-canvas .ct-balance{display:flex;align-items:flex-start;gap:8px;height:92px;color:#122c30;--balance-ink:#122c30;--balance-muted:#31565b;--balance-edge:#37575b}
+#cimora-canvas .ct-balance-plaque{position:relative;width:218px;padding-top:8px;isolation:isolate}
+#cimora-canvas[data-theme] .ct-balance .ct-balance-frame{width:100%;cursor:pointer;color:var(--balance-ink);position:relative;display:flex;align-items:center;justify-content:flex-end;gap:12px;height:60px;padding:0 15px 0 35px;box-sizing:border-box;background:transparent;border:0;border-radius:0}
+#cimora-canvas .ct-balance-frame:before,#cimora-canvas .ct-balance-frame:after{content:"";position:absolute;z-index:-1;inset:0;clip-path:polygon(5% 0,98% 5%,94% 94%,9% 100%,0 28%)}
+#cimora-canvas .ct-balance-frame:before{background:#233c47;transform:translate(0,5px) rotate(-2deg);box-shadow:none}
+#cimora-canvas .ct-balance-frame:after{inset:3px 5px 4px;background:linear-gradient(145deg,#a5e4e2 0 16%,transparent 16% 80%,#60adb5 80%),linear-gradient(25deg,#76c5cb 0 24%,#8dd6da 24% 77%,#a4e2df 77%);border-bottom:4px solid #4d919b}
+#cimora-canvas .ct-offer-flag{position:absolute;z-index:2;top:0;left:-6px;display:flex;flex-direction:column;align-items:center;width:43px;padding:5px 4px 12px;transform:rotate(-8deg);background:#bb3b38;color:#fff3d5;clip-path:polygon(0 0,100% 4%,86% 84%,8% 100%);filter:drop-shadow(2px 3px #71312c);font-family:Impact,'Arial Black',sans-serif;line-height:1}
+#cimora-canvas .ct-offer-flag strong{font-size:22px}.ct-offer-flag>span{font-size:13px}
+#cimora-canvas .ct-balance .ct-offer-strip{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;height:24px;margin-top:6px;background:#302435;color:#fff0d2;border:1px solid #75604a;border-radius:0;transform:rotate(-1deg);font-family:'Arial Black','Segoe UI Black',sans-serif;font-weight:900;box-shadow:2px 2px 0 #0003}
+#cimora-canvas .ct-offer-strip strong{font-size:16px;font-variant-numeric:tabular-nums;letter-spacing:.5px}
+#cimora-canvas .ct-offer-strip span{font-size:12px;letter-spacing:.6px;transform:skewX(-5deg)}
+#cimora-canvas .canvas-tools .ct-offer-strip svg{width:13px;height:16px}
+#cimora-canvas .ct-balance .ct-offer-strip:hover{background:#4a354c}
+#cimora-canvas .ct-topbar{align-items:flex-start}
+#cimora-canvas .canvas-tools .ct-crystal{width:42px;height:48px;margin-top:14px;flex-shrink:0;filter:drop-shadow(2px 3px 0 #253e3540)}
+#cimora-canvas .ct-balance-copy{display:flex;flex-direction:column;min-width:78px;gap:1px}
+#cimora-canvas .ct-balance-copy strong{display:block;font-family:'Arial Black','Segoe UI Black',sans-serif;font-weight:900;font-size:23px;line-height:1.1;letter-spacing:1.2px;transform:skewX(-6deg);-webkit-text-stroke:.5px currentColor;text-shadow:0 1px 0 #34575a;white-space:nowrap}
+#cimora-canvas .ct-balance-copy span{font-size:8px;font-weight:800;letter-spacing:1px;color:var(--balance-muted)}
+#cimora-canvas[data-theme] .ct-balance .ct-recharge-trigger{display:grid;place-items:center;width:36px;height:36px;padding:0;background:none;border:0;border-radius:0;box-shadow:none;color:var(--balance-ink);clip-path:none}
+#cimora-canvas .ct-balance .ct-recharge-trigger svg{width:27px;height:30px;filter:drop-shadow(1px 2px 0 #29474b66)}
+#cimora-canvas[data-theme] .ct-balance .ct-recharge-trigger:is(:hover,:active,[aria-expanded=true]){background:none;border:0;box-shadow:none;transform:none}
+#cimora-canvas[data-theme] .ct-balance .ct-balance-frame:is(:hover,:focus-visible) .ct-recharge-trigger svg{animation:ct-lightning-sway .55s ease-in-out infinite;transform-origin:50% 55%}
+@keyframes ct-lightning-sway{0%,100%{transform:translateX(0) rotate(0)}25%{transform:translateX(-2px) rotate(-10deg)}75%{transform:translateX(2px) rotate(10deg)}}
+@media(prefers-reduced-motion:reduce){#cimora-canvas[data-theme] .ct-balance .ct-balance-frame:is(:hover,:focus-visible) .ct-recharge-trigger svg{animation:none}}
+#cimora-canvas.canvas-fantasy-experiment .ct-topbar .ct-capsule{min-height:50px;box-sizing:border-box;padding:6px 8px;border-radius:2px 12px 2px 2px;box-shadow:inset 0 2px 0 #ffffff15,3px 4px 0 #0005}
+#cimora-canvas.canvas-fantasy-experiment .ct-topbar .ct-account{border-left:1px solid var(--ct-border);padding-left:9px}
+#cimora-canvas .canvas-tools .ct-popover{top:calc(100% + 14px)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-recharge-panel{width:350px;background:#f1e5c3;color:#593e2c;border:1px solid #b2955c;box-shadow:inset 0 3px #fff4d4,4px 5px 0 #584333,0 15px 35px #0004;border-radius:2px 16px 2px 2px}
+#cimora-canvas .ct-recharge-panel h2{color:#68432f;font-family:Impact,'Arial Black',sans-serif;letter-spacing:.6px}
+#cimora-canvas .ct-recharge-balance{padding:16px 0;border-block:1px solid #aa885c55;display:flex;flex-direction:column;gap:8px}
+#cimora-canvas .ct-recharge-balance>span{font-size:10px;letter-spacing:1.5px;color:#88714c}
+#cimora-canvas .ct-recharge-balance strong{font-size:32px;font-family:Impact,'Arial Black',sans-serif}
+#cimora-canvas .ct-recharge-balance small{font:12px sans-serif}
+#cimora-canvas .ct-recharge-content>p{font-size:12px;line-height:1.5;margin:16px 0 12px}
+#cimora-canvas .ct-credit-packs{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+#cimora-canvas .ct-credit-packs button{padding:17px 5px;display:flex;flex-direction:column;align-items:center;gap:5px;border:1px solid #b39a70;background:#e7d7ad;color:#674b31;border-radius:1px 9px 1px 1px;box-shadow:0 3px #b29b70}
+#cimora-canvas .ct-credit-packs button strong{font-size:20px;font-family:Impact,'Arial Black',sans-serif;letter-spacing:.5px}
+#cimora-canvas .ct-credit-packs button span{font-size:10px}
+#cimora-canvas .ct-credit-packs button:hover{background:#f7edcf}
+#cimora-canvas .ct-credit-packs button[aria-pressed=true]{background:#407c6e;color:#fff3cf;border-color:#2c5c51;box-shadow:inset 0 2px #72a693,0 3px #274f46}
+#cimora-canvas .ct-recharge-content .ct-recharge-summary{color:#457466}
+#cimora-canvas .ct-payment-preview{width:100%;padding:12px;background:#ddbb6c;color:#644d29;border:1px solid #b59450;border-radius:2px;font-weight:700;cursor:not-allowed}
+#cimora-canvas .ct-recharge-content .ct-recharge-note{font-size:11px;color:#8a7557;margin-bottom:0}
+#cimora-canvas .ct-balance button:focus-visible,#cimora-canvas .ct-credit-packs button:focus-visible{outline:2px solid #259d91;outline-offset:3px}
+@media(max-width:600px){#cimora-canvas .ct-topbar{flex-direction:column;align-items:flex-end;gap:10px}#cimora-canvas .ct-topbar .ct-capsule{width:100%}#cimora-canvas .ct-balance{height:92px}#cimora-canvas .canvas-tools .ct-recharge-panel{max-height:calc(100dvh - 230px)}}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-recharge-content>p{color:#765e3e}
+
+#cimora-canvas[data-theme] .ct-balance .ct-balance-frame:is(:hover,:active,[aria-expanded=true]){background:transparent;box-shadow:none}
+#cimora-canvas .ct-balance-frame .ct-offer-flag{top:-8px}
+/* Faceted print toolbar: visual layers never clip menus or focus rings. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-topbar .ct-capsule{position:relative;isolation:isolate;gap:5px;min-height:56px;padding:8px 12px;background:none;border:0;border-radius:0;box-shadow:none;backdrop-filter:none;color:#f2eed9}
+#cimora-canvas.canvas-fantasy-experiment .ct-topbar .ct-capsule:before,#cimora-canvas.canvas-fantasy-experiment .ct-topbar .ct-capsule:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1}
+#cimora-canvas.canvas-fantasy-experiment .ct-topbar .ct-capsule:before{background:#28717a;clip-path:polygon(3% 0,100% 8%,97% 100%,0 93%);transform:translate(3px,5px)}
+#cimora-canvas.canvas-fantasy-experiment .ct-topbar .ct-capsule:after{background:linear-gradient(135deg,#fff9e9 0 5%,transparent 5% 92%,#c5c0a6 92%),repeating-linear-gradient(115deg,#17132105 0 1px,transparent 1px 5px),#f2eed9;clip-path:polygon(8px 0,calc(100% - 13px) 0,100% 12px,calc(100% - 5px) 100%,0 calc(100% - 4px),0 8px)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-capsule>button:not(.ct-account),#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-capsule>.ct-theme-anchor>button{position:relative;width:36px;height:36px;background:#22252b;color:#f2eed9;border:0;border-radius:0;box-shadow:0 2px 0 #9b9989;transition:color .15s,background .15s,transform .15s}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-capsule>button:not(.ct-account):is(:hover,[aria-expanded=true]),#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-capsule>.ct-theme-anchor>button:is(:hover,[aria-expanded=true]){background:#124b57;color:#fff3a4;box-shadow:inset 0 -3px #4cc8b0,0 2px 0 #9b9989;transform:translateY(-1px)}
+#cimora-canvas.canvas-fantasy-experiment .ct-capsule svg{width:20px;height:20px;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter}
+#cimora-canvas.canvas-fantasy-experiment .ct-capsule .ct-lang{font-family:'Arial Black',sans-serif;font-size:12px;letter-spacing:.4px}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-topbar .ct-account{position:relative;isolation:isolate;height:36px;margin-left:4px;padding:0 9px 0 5px;gap:8px;border:0;border-radius:0;background:#171321;color:#f2eed9;font-weight:800;letter-spacing:.3px;box-shadow:0 2px 0 #9b9989}
+#cimora-canvas.canvas-fantasy-experiment .ct-capsule .ct-avatar{width:28px;height:28px;border:0;border-radius:0;color:#3b291e;background:linear-gradient(135deg,#fff3a4 0 30%,#ffd447 30% 67%,#e99a34 67% 87%,#854328 87%);clip-path:polygon(5px 0,100% 0,100% calc(100% - 5px),calc(100% - 5px) 100%,0 100%,0 5px);font-family:'Arial Black',sans-serif}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-topbar .ct-account:is(:hover,[aria-expanded=true]){background:#124b57;color:#fff3a4;box-shadow:inset 0 -3px #4cc8b0,0 2px 0 #9b9989}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-capsule button:focus-visible{outline:2px solid #e99a34;outline-offset:3px}
+@media(max-width:450px){#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-topbar .ct-capsule{padding:8px;gap:3px}#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-capsule>button:not(.ct-account),#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-capsule>.ct-theme-anchor>button{width:32px}#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-topbar .ct-account{margin-left:0;padding-right:7px;gap:5px;font-size:12px}}
+#cimora-canvas.canvas-fantasy-experiment .ct-capsule .ct-faceted-icon{width:24px;height:24px;stroke:none;--glyph-light:#fff6d1;--glyph-mid:#c9c6ac;--glyph-shade:#7c9b91}
+#cimora-canvas.canvas-fantasy-experiment .ct-capsule .ct-glyph-guide{--glyph-light:#a9e6ff;--glyph-mid:#54b8e8;--glyph-shade:#3973bd}
+#cimora-canvas.canvas-fantasy-experiment .ct-capsule .ct-glyph-sun{--glyph-light:#fff1a1;--glyph-mid:#ffc64b;--glyph-shade:#e88838}
+#cimora-canvas.canvas-fantasy-experiment .ct-capsule .ct-glyph-moon{--glyph-light:#e2d6ff;--glyph-mid:#b79aef;--glyph-shade:#8066c4}
+#cimora-canvas.canvas-fantasy-experiment .ct-capsule .ct-glyph-keyboard{--glyph-light:#b4f3db;--glyph-mid:#69cdb2;--glyph-shade:#348f84}
+#cimora-canvas.canvas-fantasy-experiment .ct-capsule .ct-glyph-bell{--glyph-light:#ffe3a3;--glyph-mid:#ffbd64;--glyph-shade:#df8054}
+#cimora-canvas.canvas-fantasy-experiment .ct-capsule .ct-lang{color:#95d9f1}
+#cimora-canvas.canvas-fantasy-experiment .ct-capsule button:is(:hover,[aria-expanded=true]) :is(.ct-faceted-icon,.ct-lang){filter:brightness(1.15)}
+/* Shortcut field sheet, matching the faceted print toolbar. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-popover.ct-shortcuts-panel{isolation:isolate;padding:18px 22px 20px;border:2px solid #252c30;border-radius:0;background:linear-gradient(135deg,#fff9e9 0 12px,transparent 12px),repeating-linear-gradient(115deg,#554b3003 0 1px,transparent 1px 5px),#f2eed9;color:#222b30;box-shadow:5px 6px 0 #28717a,8px 9px 0 #171321;max-height:calc(100dvh - 150px);--ct-muted:#536064}
+#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel>header{position:relative;isolation:isolate;min-height:58px;margin:-2px -6px 12px;padding:6px 12px 10px;color:#f2eed9}
+#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel>header:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(110deg,#293b40 0 15%,#171b25 15% 94%,#31555b 94%);clip-path:polygon(0 0,100% 0,calc(100% - 10px) calc(100% - 4px),14px 100%,0 calc(100% - 10px));border-top:3px solid #4cc8b0}
+#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel h2{font-family:'Arial Black','Segoe UI',sans-serif;font-weight:900;font-size:19px;letter-spacing:.2px;color:#f2eed9}
+#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel>header>button{width:30px;height:30px;border-radius:0;color:#f2eed9;background:transparent}
+#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel>header>button:hover{background:#345b60;color:#fff3a4}
+#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel .ct-shortcuts{font-size:14px;scrollbar-color:#28717a #ddd8c3;padding-right:10px}
+#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel .ct-shortcuts>div{min-height:56px;padding:12px 4px;border-bottom:1px solid #acb3a780;gap:20px}
+#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel .ct-shortcuts>div:last-child{border-bottom:0}
+#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel .ct-shortcuts>div:hover{background:#28717a0b}
+#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel .ct-shortcuts dd{color:#46565a;font-weight:500;line-height:1.45}
+#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel .ct-shortcuts kbd{background:linear-gradient(135deg,#fff9e5 0 7px,transparent 7px),#e3dfca;color:#26353b;border:1px solid #909b90;border-radius:0;padding:6px 10px;box-shadow:2px 3px 0 #87938b;font:700 12px/1.4 ui-monospace,Consolas,monospace;min-width:34px}
+#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel .ct-shortcut-plus{color:#28717a;font-weight:900}
+#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel header .ct-quick-switch{background:#5b6668;border:1px solid #82948f;box-shadow:none}
+#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel header .ct-quick-switch[aria-checked=true]{background:#287d70;border-color:#65c9ac}
+#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel .ct-quick-switch span{background:#f2eed9;box-shadow:1px 2px 0 #152d2a55}
+#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel .ct-quick-switch[aria-checked=true] span{background:#fff3a4}
+@media(max-width:600px){#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-popover.ct-shortcuts-panel{padding:14px 12px;max-height:calc(100dvh - 170px)}#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel h2{font-size:15px}#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel .ct-title-actions{gap:8px}#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel .ct-shortcuts>div{grid-template-columns:1fr;gap:10px;padding:14px 4px}#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel .ct-shortcuts dd{text-align:left;font-size:13px}#cimora-canvas.canvas-fantasy-experiment .ct-shortcuts-panel>header{padding-inline:8px}}
+/* Creator Guide: illustrated course cards on a printed field board. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-creator-guide{padding:24px;border:2px solid #171321;border-radius:0;background:repeating-linear-gradient(115deg,#284b4005 0 1px,transparent 1px 6px),#e7e3cf;color:#202b30;box-shadow:6px 7px 0 #28717a,10px 11px 0 #171321;--ct-muted:#52605d}
+#cimora-canvas.canvas-fantasy-experiment .ct-creator-guide>header{position:relative;isolation:isolate;padding:16px 20px 20px;margin-bottom:22px;align-items:center;color:#f2eed9}
+#cimora-canvas.canvas-fantasy-experiment .ct-creator-guide>header:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(110deg,#294b51 0 14%,#171b25 14% 94%,#31555b 94%);clip-path:polygon(0 0,100% 0,calc(100% - 14px) calc(100% - 5px),16px 100%,0 calc(100% - 16px));border-top:3px solid #4cc8b0}
+#cimora-canvas.canvas-fantasy-experiment .ct-creator-guide h2{font-family:'Arial Black','Segoe UI',sans-serif;font-size:27px;font-weight:900;letter-spacing:.3px;text-transform:uppercase;color:#f2eed9}
+#cimora-canvas.canvas-fantasy-experiment .ct-guide-heading p{color:#c5d4c9;font-size:14px;margin-top:5px}
+#cimora-canvas.canvas-fantasy-experiment .ct-guide-emblem{border-radius:0;background:linear-gradient(135deg,#fff3a4 0 30%,#ffd447 30% 72%,#e99a34 72%);color:#35281d;clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)}
+#cimora-canvas.canvas-fantasy-experiment .ct-creator-guide>header>button{color:#f2eed9;border-radius:0;background:transparent}
+#cimora-canvas.canvas-fantasy-experiment .ct-creator-guide>header>button:hover{background:#31555b;color:#fff3a4}
+#cimora-canvas.canvas-fantasy-experiment .ct-guide-grid{gap:20px;padding:2px 12px 8px 2px;scrollbar-color:#28717a #d4d2bf}
+#cimora-canvas.canvas-fantasy-experiment .ct-lesson{position:relative;background:#f7f1de;border:1px solid #778c82;border-radius:0;box-shadow:3px 4px 0 #a1b2a5;overflow:hidden}
+#cimora-canvas.canvas-fantasy-experiment .ct-lesson-cover{position:relative;aspect-ratio:360/160;background:#124b57;border-bottom:4px solid #283d40}
+#cimora-canvas.canvas-fantasy-experiment .ct-lesson-cover svg{display:block;width:100%;height:100%}
+#cimora-canvas.canvas-fantasy-experiment .ct-lesson-number{position:absolute;left:12px;top:10px;color:#f2eed9;font:900 18px 'Arial Black',sans-serif;border-bottom:2px solid #4cc8b0;line-height:1.4}
+#cimora-canvas.canvas-fantasy-experiment .ct-lesson-copy{padding:18px 20px 22px}
+#cimora-canvas.canvas-fantasy-experiment .ct-lesson-tags{gap:6px;margin-bottom:14px;font-size:11px;color:#23494d;font-weight:700}
+#cimora-canvas.canvas-fantasy-experiment .ct-lesson-tags span{border-radius:0;background:#dbe5d7;padding:4px 8px}
+#cimora-canvas.canvas-fantasy-experiment .ct-lesson-tags span:first-child{background:#254e55;color:#f2eed9}
+#cimora-canvas.canvas-fantasy-experiment .ct-lesson-tags span:last-child{background:#e9d7a0;color:#5b4728}
+#cimora-canvas.canvas-fantasy-experiment .ct-lesson h3{font-size:17px;line-height:1.4;font-weight:850;color:#202e32;margin-bottom:10px}
+#cimora-canvas.canvas-fantasy-experiment .ct-lesson p{font-size:14px;line-height:1.6;color:#52605d}
+@media(max-width:600px){#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-creator-guide{padding:12px;inset:12px;max-height:calc(100dvh - 24px)}#cimora-canvas.canvas-fantasy-experiment .ct-creator-guide>header{padding:12px 10px 16px;gap:6px;margin-bottom:14px}#cimora-canvas.canvas-fantasy-experiment .ct-creator-guide h2{font-size:18px}#cimora-canvas.canvas-fantasy-experiment .ct-guide-heading p{font-size:12px}#cimora-canvas.canvas-fantasy-experiment .ct-guide-emblem{width:36px;height:40px}#cimora-canvas.canvas-fantasy-experiment .ct-lesson-copy{padding:16px}}
+#cimora-canvas.canvas-fantasy-experiment .ct-guide-grid{grid-auto-rows:max-content}
+/* Neutral faceted tool rail; retain the active canvas palette. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .canvas-node-tools{isolation:isolate;background:transparent!important;border:0!important;border-radius:0!important;padding:10px 7px!important;gap:7px!important;box-shadow:none!important}
+#cimora-canvas.canvas-fantasy-experiment .canvas-node-tools:before,#cimora-canvas.canvas-fantasy-experiment .canvas-node-tools:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%)}
+#cimora-canvas.canvas-fantasy-experiment .canvas-node-tools:before{background:var(--canvas-border);transform:translate(4px,4px)}
+#cimora-canvas.canvas-fantasy-experiment .canvas-node-tools:after{background:linear-gradient(135deg,#ffffff0d 0 11px,transparent 11px),repeating-linear-gradient(120deg,#ffffff02 0 1px,transparent 1px 5px),var(--canvas-panel);border:1px solid var(--canvas-border);box-shadow:inset 3px 0 #ffffff09,inset -3px 0 #0002}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .canvas-node-tools button{position:relative;border-radius:0;background:transparent;color:var(--canvas-icon);box-shadow:none;transition:background .15s,color .15s}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .canvas-node-tools button:is(:hover,[aria-pressed=true]){background:var(--canvas-raised);color:var(--canvas-text);box-shadow:inset 2px 0 var(--canvas-muted),inset 0 -2px #0003}
+#cimora-canvas.canvas-fantasy-experiment .canvas-node-tools button[aria-pressed=true]:after{content:"";position:absolute;right:3px;top:21px;width:5px;height:5px;background:currentColor;transform:rotate(45deg);pointer-events:none}
+#cimora-canvas.canvas-fantasy-experiment .canvas-node-tools .canvas-tools-divider{width:32px;background:var(--canvas-border);box-shadow:0 1px #ffffff08;margin:3px 0}
+#cimora-canvas.canvas-fantasy-experiment .canvas-node-tools .canvas-tool-glyph{width:23px;height:23px;filter:drop-shadow(1px 1px 0 #0003)}
+#cimora-canvas.canvas-fantasy-experiment .canvas-node-tools button[aria-label="Add node"]{background:var(--canvas-raised);color:var(--canvas-text);box-shadow:inset 0 2px #ffffff0b,0 2px #0003}
+#cimora-canvas.canvas-fantasy-experiment .canvas-node-tools button:disabled{opacity:.4;cursor:not-allowed}
+#cimora-canvas.canvas-fantasy-experiment .canvas-node-tools button:focus-visible{outline:2px solid var(--canvas-muted);outline-offset:2px}
+/* Remaining toolbar menus share the printed paper language. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-print-panel{background:repeating-linear-gradient(115deg,#554b3004 0 1px,transparent 1px 5px),#f2eed9;color:#26353b;border:2px solid #252c30;border-radius:0;padding:16px;box-shadow:4px 5px 0 #28717a,7px 8px 0 #171321;--ct-muted:#536064}
+#cimora-canvas.canvas-fantasy-experiment .ct-print-panel>header{position:relative;isolation:isolate;min-height:48px;padding:8px 10px 12px;margin:0 0 16px;color:#f2eed9}
+#cimora-canvas.canvas-fantasy-experiment .ct-print-panel>header:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(115deg,#294b51 0 17%,#171b25 17% 94%,#31555b 94%);clip-path:polygon(0 0,100% 0,calc(100% - 7px) calc(100% - 3px),10px 100%,0 calc(100% - 10px));border-top:2px solid #4cc8b0}
+#cimora-canvas.canvas-fantasy-experiment .ct-print-panel>header h2{font-family:'Arial Black','Segoe UI',sans-serif;font-size:16px;font-weight:900;color:#f2eed9}
+#cimora-canvas.canvas-fantasy-experiment .ct-print-panel>header button{color:#f2eed9;border-radius:0;width:28px;height:28px;background:transparent}
+#cimora-canvas.canvas-fantasy-experiment .ct-print-panel>header button:hover{background:#31555b;color:#fff3a4}
+#cimora-canvas.canvas-fantasy-experiment .ct-print-panel p{color:#536064}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-print-panel .ct-options button{background:#e3dfca;color:#26353b;border:1px solid #9ba697;border-radius:0;box-shadow:2px 2px #a1b2a5;margin-bottom:6px;font-weight:700}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-print-panel .ct-options button:hover{background:#d0dfd1}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-print-panel .ct-options button[aria-pressed=true]{background:#254e55;color:#fff3a4;border-color:#254e55;box-shadow:inset 3px 0 #4cc8b0,2px 2px #a1b2a5}
+#cimora-canvas.canvas-fantasy-experiment .ct-notice-emblem{display:grid;place-items:center;width:64px;height:64px;background:linear-gradient(135deg,#fff3a4 0 30%,#ffd447 30% 72%,#e99a34 72%);clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)}
+#cimora-canvas.canvas-fantasy-experiment .ct-notice-emblem svg{width:34px;height:34px;--glyph-light:#f2eed9;--glyph-mid:#31555b;--glyph-shade:#171b25}
+#cimora-canvas.canvas-fantasy-experiment .ct-print-panel .ct-empty h3{font-weight:800;color:#26353b}
+#cimora-canvas.canvas-fantasy-experiment .ct-print-panel .ct-profile{border-bottom:1px solid #a1b2a5;margin-bottom:12px;padding:4px 4px 18px}
+#cimora-canvas.canvas-fantasy-experiment .ct-print-panel .ct-profile .ct-avatar{border-radius:0;background:linear-gradient(135deg,#fff3a4 0 30%,#ffd447 30% 72%,#e99a34 72%);color:#35281d;font:900 20px 'Arial Black',sans-serif;clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px)}
+#cimora-canvas.canvas-fantasy-experiment .ct-print-panel .ct-links a{border-radius:0;border-bottom:1px solid #a1b2a550;color:#26353b;font-weight:650}
+#cimora-canvas.canvas-fantasy-experiment .ct-print-panel .ct-links a:hover{background:#d8e3d4;box-shadow:inset 3px 0 #28717a}
+#cimora-canvas.canvas-fantasy-experiment .ct-print-panel .ct-shortcuts dd{color:#536064}
+#cimora-canvas.canvas-fantasy-experiment .ct-print-panel .ct-shortcuts kbd{background:#e3dfca;color:#26353b;border:1px solid #909b90;border-radius:0;box-shadow:2px 2px #87938b}
+#cimora-canvas.canvas-fantasy-experiment .ct-print-panel .ct-shortcuts>div{border-bottom:1px solid #acb3a760}
+#cimora-canvas.canvas-fantasy-experiment .ct-print-panel .ct-shortcuts>div:last-child{border:0}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-theme-menu{background:#f2eed9;border:2px solid #252c30;border-radius:0;padding:10px;gap:8px;box-shadow:3px 4px 0 #28717a,5px 6px 0 #171321;backdrop-filter:none;color:#254e55}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-theme-menu button{background:transparent;border-radius:0;position:relative}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-theme-menu button:hover{background:#d8e3d4;box-shadow:none}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-theme-menu button[aria-pressed=true]{outline:2px solid #28717a;outline-offset:1px;background:#d8e3d4}
+#cimora-canvas.canvas-fantasy-experiment .ct-theme-menu .canvas-theme-dot{box-shadow:1px 2px 0 #17132135;border-color:#6d7879}
+#cimora-canvas .ct-print-panel .ct-links>button{display:flex;align-items:center;gap:12px;text-align:left;padding:11px;border:0;border-radius:0;background:#254e55;color:#fff3a4;font-size:13px;font-weight:800}
+#cimora-canvas .ct-print-panel .ct-links>button:hover{background:#31656a}
+#cimora-canvas .ct-pack-dialog{position:fixed;inset:0;margin:auto;width:min(1180px,calc(100vw - 40px));height:min(720px,calc(100dvh - 48px));max-width:none;max-height:none;padding:0;overflow:visible;border:3px solid #efe6c9;background:#171b25;color:#f2eed9;box-shadow:7px 8px 0 #171321;font-family:inherit}
+#cimora-canvas .ct-pack-dialog::backdrop{background:#090c13c9}
+#cimora-canvas .pack-free{--pack-sky:#18474d;--pack-mid:#36796b;--pack-dark:#183b3b;--pack-light:#a4e4bd}
+#cimora-canvas .pack-hobby{--pack-sky:#19475e;--pack-mid:#267b89;--pack-dark:#16323f;--pack-light:#9de6dc}
+#cimora-canvas .pack-pro{--pack-sky:#352646;--pack-mid:#795180;--pack-dark:#251e37;--pack-light:#e5b7d6}
+#cimora-canvas .pack-studio{--pack-sky:#502c2c;--pack-mid:#9c5936;--pack-dark:#30232a;--pack-light:#ffd96a}
+#cimora-canvas .ct-pack-layout{position:relative;height:100%;isolation:isolate;display:grid;grid-template-columns:210px 1fr;grid-template-rows:auto 1fr auto;padding:26px;gap:20px 32px;overflow:hidden}
+#cimora-canvas .ct-pack-art{position:absolute;inset:0;z-index:-2;animation:ct-pack-reveal .35s ease-out}
+#cimora-canvas .ct-pack-art svg{width:100%;height:100%;display:block}
+#cimora-canvas .ct-pack-layout:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#10172355,transparent 60%),linear-gradient(0deg,#10131a 0,transparent 55%)}
+#cimora-canvas .ct-pack-header{grid-column:1/-1;display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+#cimora-canvas .ct-pack-header span{font-size:10px;letter-spacing:2.5px;color:#e5dcbf}
+#cimora-canvas .ct-pack-header h2{font-family:'Arial Black',sans-serif;font-size:24px;line-height:1.2;letter-spacing:-.7px;margin:8px 0 0;color:#fff3d3}
+#cimora-canvas .ct-pack-header button{display:grid;place-items:center;width:36px;height:36px;flex-shrink:0;background:#f2eed9;color:#171321;border:0;box-shadow:3px 3px #171321}
+#cimora-canvas .ct-pack-header button:hover{background:#ffd447}
+#cimora-canvas .ct-pack-nav{grid-column:1;grid-row:2/4;display:flex;flex-direction:column;gap:14px;overflow-y:auto;padding:4px 9px 8px 4px;scrollbar-color:#f2eed9 #171321}
+#cimora-canvas .ct-pack-tab{position:relative;isolation:isolate;flex-shrink:0;min-height:98px;border:2px solid #ffffff40;padding:0;background:var(--pack-sky);color:#fff3d3;text-align:left;box-shadow:3px 4px #171321;overflow:hidden}
+#cimora-canvas .ct-pack-tab>svg:not(:last-child){position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+#cimora-canvas .ct-pack-tab>span{display:flex;flex-direction:column;justify-content:flex-end;min-height:94px;padding:10px;background:linear-gradient(0deg,#10131aee,transparent)}
+#cimora-canvas .ct-pack-tab small{font-size:10px;letter-spacing:2px;color:#e5dcbf}
+#cimora-canvas .ct-pack-tab strong{font-size:17px;font-family:'Arial Black',sans-serif}
+#cimora-canvas .ct-pack-tab[aria-pressed=true]{border-color:#fff3a4;box-shadow:3px 4px #e99a34}
+#cimora-canvas .ct-pack-tab:hover{border-color:#fff3a4}
+#cimora-canvas .ct-pack-tab>svg:last-child:not(:first-child){position:absolute;right:9px;top:9px;width:19px;height:19px;color:#fff3a4}
+#cimora-canvas .ct-pack-detail{grid-column:2;align-self:end;max-width:540px;padding-top:100px;text-shadow:1px 2px #171321}
+#cimora-canvas .ct-pack-eyebrow{font-size:10px;letter-spacing:2px;border-left:3px solid #ffd447;padding-left:9px}
+#cimora-canvas .ct-pack-detail h3{font-family:'Arial Black',sans-serif;font-size:clamp(32px,4vw,54px);text-transform:uppercase;line-height:1.05;margin:12px 0;color:#fff3d3;letter-spacing:-1px}
+#cimora-canvas .ct-pack-detail p{font-size:14px;line-height:1.5;color:#e5e5d9;max-width:430px;margin:8px 0}
+#cimora-canvas .ct-pack-detail .ct-pack-tagline{font-weight:800;font-size:20px;color:#fff3d3}
+#cimora-canvas .ct-pack-footer{grid-column:2;display:flex;align-items:end;justify-content:space-between;gap:24px;padding-top:20px;border-top:1px solid #f2eed950}
+#cimora-canvas .ct-pack-facts{display:flex;flex-direction:column;gap:7px}
+#cimora-canvas .ct-pack-facts>span{font-size:9px;letter-spacing:1.4px;color:#d7ccb2}
+#cimora-canvas .ct-pack-facts strong{font-size:20px;color:#fff3d3}
+#cimora-canvas .ct-pack-facts small{font-size:11px;color:#d7ccb2;line-height:1.5}
+#cimora-canvas .ct-pack-action{width:250px;flex-shrink:0}
+#cimora-canvas .ct-pack-action button{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px;background:linear-gradient(135deg,#fff3a4 0 14%,#ffd447 14% 85%,#e99a34 85%);color:#30251d;border:2px solid #171321;box-shadow:3px 4px #854328;font:900 15px 'Arial Black',sans-serif}
+#cimora-canvas .ct-pack-action button:hover:not(:disabled){filter:brightness(1.1)}
+#cimora-canvas .ct-pack-action button:disabled{background:#c2c0ae;color:#55584f;box-shadow:3px 4px #55584f;cursor:default}
+#cimora-canvas .ct-pack-action p{font-size:10px;line-height:1.5;min-height:30px;margin:10px 0 0;color:#d7ccb2}
+#cimora-canvas .ct-pack-dialog button:focus-visible{outline:2px solid #fff3a4;outline-offset:3px}
+@keyframes ct-pack-reveal{from{opacity:.3;transform:translateX(10px)}to{opacity:1;transform:translateX(0)}}
+@media(max-width:800px){#cimora-canvas .ct-pack-dialog{width:calc(100vw - 24px);height:calc(100dvh - 24px)}#cimora-canvas .ct-pack-layout{padding:18px;grid-template-columns:1fr;grid-template-rows:auto auto 1fr auto;gap:18px;overflow-y:auto}#cimora-canvas .ct-pack-header h2{font-size:18px}#cimora-canvas .ct-pack-nav{grid-column:1;grid-row:2;flex-direction:row;min-height:106px;overflow-x:auto;overflow-y:hidden}#cimora-canvas .ct-pack-tab{width:145px;min-height:90px}#cimora-canvas .ct-pack-tab>span{min-height:90px}#cimora-canvas .ct-pack-tab strong{font-size:14px}#cimora-canvas .ct-pack-detail{grid-column:1;padding-top:80px}#cimora-canvas .ct-pack-detail h3{font-size:34px}#cimora-canvas .ct-pack-footer{grid-column:1;flex-wrap:wrap;gap:14px}#cimora-canvas .ct-pack-action{width:100%}#cimora-canvas .ct-pack-detail .ct-pack-tagline{font-size:17px}}
+@media(prefers-reduced-motion:reduce){#cimora-canvas .ct-pack-art{animation:none}}
+
+/* Meika toolbar: scoped to the top-right controls, preserving existing panels. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-topbar.mk-theme .ct-capsule{gap:7px;padding:8px 10px;min-height:60px;border:1px solid color-mix(in srgb,var(--canvas-selection) 50.2%,transparent);border-radius:18px 5px;background:linear-gradient(110deg,color-mix(in srgb,var(--canvas-panel) 93.33%,transparent),color-mix(in srgb,var(--canvas-raised) 85.1%,transparent));box-shadow:inset 0 1px 0 color-mix(in srgb,var(--canvas-selection) 37.65%,transparent),inset 0 0 0 3px color-mix(in srgb,var(--canvas-selection) 10.2%,transparent),0 5px 16px color-mix(in srgb,var(--canvas-input) 33.33%,transparent);backdrop-filter:blur(14px);color:var(--canvas-text)}
+#cimora-canvas.canvas-fantasy-experiment .ct-topbar.mk-theme .ct-capsule::before,#cimora-canvas.canvas-fantasy-experiment .ct-topbar.mk-theme .ct-capsule::after{display:none}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-topbar.mk-theme .ct-capsule .mk-button{width:42px;height:42px;min-height:42px;min-width:42px;padding:7px;position:relative;border:1px solid color-mix(in srgb,var(--canvas-selection) 50.2%,transparent);border-radius:12px 4px;background:linear-gradient(135deg,color-mix(in srgb,var(--canvas-panel) 90.98%,transparent),color-mix(in srgb,var(--canvas-panel) 90.98%,transparent));color:var(--canvas-text);box-shadow:inset 0 1px 0 color-mix(in srgb,var(--canvas-selection) 33.33%,transparent),inset 0 0 10px color-mix(in srgb,var(--canvas-selection) 9.41%,transparent),0 2px 2px color-mix(in srgb,var(--canvas-input) 50.2%,transparent);text-transform:none;transition:background .15s,box-shadow .15s,transform .15s}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-topbar.mk-theme .ct-capsule .mk-button:is(:hover,[aria-expanded=true]){background:linear-gradient(135deg,var(--canvas-raised),var(--canvas-panel));color:var(--canvas-text);border-color:var(--canvas-selection);box-shadow:inset 0 0 10px color-mix(in srgb,var(--canvas-selection) 25.1%,transparent),0 0 9px color-mix(in srgb,var(--canvas-border) 25.1%,transparent);transform:translateY(-1px)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-topbar.mk-theme .ct-capsule .ct-account{width:auto;min-width:112px;margin-left:3px;padding:6px 12px;border-color:#ffdf8b;border-radius:16px 5px;background:#ecae53 url('/meika/purchase-skin.webp') center/100% 100%;color:#614312;box-shadow:inset 0 1px 0 #fff4ba,0 2px 5px color-mix(in srgb,var(--canvas-input) 50.2%,transparent);font-family:'Segoe UI',sans-serif;font-weight:800;letter-spacing:0}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-topbar.mk-theme .ct-capsule .ct-account:is(:hover,[aria-expanded=true]){background:#f6bd59 url('/meika/purchase-skin.webp') center/100% 100%;border-color:#fff2ba;box-shadow:0 0 14px #ffc46a55;color:#51350d}
+#cimora-canvas.canvas-fantasy-experiment .ct-topbar.mk-theme .ct-avatar{width:26px;height:26px;border-radius:50%;clip-path:none;background:linear-gradient(140deg,#fff2b9,#e4a43b);border:1px solid #98651f;box-shadow:inset 0 1px 0 #fff6ce;color:#694719}
+#cimora-canvas.canvas-fantasy-experiment .ct-topbar.mk-theme .ct-lang{font-family:'Segoe UI',sans-serif;font-size:12px;font-weight:800;color:var(--canvas-text)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-topbar.mk-theme .mk-button:focus-visible{outline:2px solid var(--canvas-selection);outline-offset:3px}
+@media(max-width:450px){#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-topbar.mk-theme .ct-capsule{gap:4px;padding:7px;min-height:52px}#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-topbar.mk-theme .ct-capsule .mk-button{width:32px;min-width:32px;height:36px;min-height:36px;padding:4px}#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-topbar.mk-theme .ct-capsule .ct-account{width:auto;min-width:92px;margin-left:0;padding:5px 7px;font-size:12px}}
+
+#cimora-canvas.canvas-fantasy-experiment .ct-topbar.mk-theme .ct-capsule .ct-meika-icon{width:28px;height:28px;overflow:visible;filter:drop-shadow(0 2px 1px color-mix(in srgb,var(--canvas-input) 50.2%,transparent))}
+#cimora-canvas.canvas-fantasy-experiment .ct-topbar.mk-theme .ct-meika-icon *{stroke-linecap:round;stroke-linejoin:round}
+#cimora-canvas.canvas-fantasy-experiment .ct-topbar.mk-theme .mk-button:is(:hover,[aria-expanded=true]) .ct-meika-icon{filter:drop-shadow(0 1px 3px color-mix(in srgb,var(--canvas-selection) 43.92%,transparent)) brightness(1.1)}
+@media(max-width:450px){#cimora-canvas.canvas-fantasy-experiment .ct-topbar.mk-theme .ct-capsule .ct-meika-icon{width:24px;height:24px}}
+
+
+/* Meika toolbar panels share the same glass surface and interaction states. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools :is(.ct-popover,.ct-quick-panel,.ct-creator-guide,.ct-theme-menu,.ct-pack-dialog){color:var(--canvas-text);--ct-muted:var(--canvas-muted);border:1px solid color-mix(in srgb,var(--canvas-selection) 50.2%,transparent);border-radius:20px 6px;background:linear-gradient(135deg,color-mix(in srgb,var(--canvas-panel) 96.08%,transparent),color-mix(in srgb,var(--canvas-panel) 96.08%,transparent));box-shadow:inset 0 1px color-mix(in srgb,var(--canvas-selection) 33.33%,transparent),inset 0 0 0 3px color-mix(in srgb,var(--canvas-selection) 8.24%,transparent),0 16px 48px color-mix(in srgb,var(--canvas-input) 43.92%,transparent);backdrop-filter:blur(18px);scrollbar-color:var(--canvas-border) var(--canvas-panel);color-scheme:var(--meika-scheme)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-popover{top:70px;padding:18px}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools :is(.ct-popover,.ct-quick-panel,.ct-creator-guide)>header{min-height:44px;padding:0 0 14px;margin:0 0 16px;border-bottom:1px solid color-mix(in srgb,var(--canvas-selection) 18.82%,transparent);color:var(--canvas-text)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools :is(.ct-popover,.ct-quick-panel,.ct-creator-guide)>header::before{display:none}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools :is(.ct-popover,.ct-quick-panel,.ct-creator-guide) h2{font-family:'Segoe UI',sans-serif;font-size:18px;font-weight:800;letter-spacing:.2px;color:var(--canvas-text);text-transform:none}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools :is(.ct-popover,.ct-quick-panel,.ct-creator-guide)>header>button,#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-pack-header button{width:32px;height:32px;border:1px solid color-mix(in srgb,var(--canvas-selection) 37.65%,transparent);border-radius:10px 4px;background:linear-gradient(135deg,var(--canvas-raised),var(--canvas-panel));color:var(--canvas-text);box-shadow:inset 0 1px color-mix(in srgb,var(--canvas-selection) 18.82%,transparent)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools :is(.ct-popover,.ct-quick-panel,.ct-creator-guide)>header>button:hover,#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-pack-header button:hover{background:var(--canvas-raised);color:var(--canvas-text);border-color:var(--canvas-selection)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools :is(.ct-popover,.ct-quick-panel,.ct-creator-guide) p,#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-shortcuts dd{color:var(--canvas-muted)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-options button,#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-links a,#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-links>button{border:1px solid color-mix(in srgb,var(--canvas-selection) 18.82%,transparent);border-radius:10px 4px;background:color-mix(in srgb,var(--canvas-panel) 33.33%,transparent);color:var(--canvas-text);box-shadow:inset 0 1px color-mix(in srgb,var(--canvas-selection) 8.24%,transparent);font-weight:650}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-options button:hover,#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-links a:hover,#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-links>button:hover{background:var(--canvas-raised);box-shadow:inset 0 0 12px color-mix(in srgb,var(--canvas-selection) 12.55%,transparent);border-color:var(--canvas-selection);color:var(--canvas-text)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-options button[aria-pressed=true]{background:linear-gradient(110deg,var(--canvas-raised),var(--canvas-panel));color:var(--canvas-selection);border-color:var(--canvas-selection);box-shadow:inset 3px 0 var(--canvas-selection),0 0 12px color-mix(in srgb,var(--canvas-border) 12.55%,transparent)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-profile{border-bottom:1px solid color-mix(in srgb,var(--canvas-selection) 18.82%,transparent)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-profile .ct-avatar{border-radius:50%;clip-path:none;background:linear-gradient(140deg,#fff2b9,#e4a43b);border:1px solid #98651f;color:#694719;box-shadow:inset 0 1px #fff6ce}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-empty h3{color:var(--canvas-text)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-notice-emblem,#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-guide-emblem{border:1px solid color-mix(in srgb,var(--canvas-selection) 43.92%,transparent);border-radius:18px 6px;clip-path:none;background:radial-gradient(circle at 30% 20%,var(--canvas-raised),var(--canvas-panel));color:var(--canvas-selection);box-shadow:inset 0 1px color-mix(in srgb,var(--canvas-selection) 31.37%,transparent)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-shortcuts{scrollbar-color:var(--canvas-border) var(--canvas-panel)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-shortcuts>div{border-bottom:1px solid color-mix(in srgb,var(--canvas-selection) 14.9%,transparent)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-shortcuts>div:hover{background:color-mix(in srgb,var(--canvas-selection) 3.53%,transparent)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-shortcuts kbd{background:linear-gradient(var(--canvas-raised),var(--canvas-panel));color:var(--canvas-text);border:1px solid color-mix(in srgb,var(--canvas-border) 50.2%,transparent);border-radius:6px;box-shadow:0 3px var(--canvas-input),inset 0 1px color-mix(in srgb,var(--canvas-selection) 14.51%,transparent);font-weight:700}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-shortcut-plus{color:var(--canvas-muted)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-shortcuts-panel header .ct-quick-switch{background:var(--canvas-panel);border-color:var(--canvas-border);box-shadow:inset 0 2px 4px #0005}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-shortcuts-panel header .ct-quick-switch[aria-checked=true]{background:var(--canvas-raised);border-color:var(--canvas-selection)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-shortcuts-panel .ct-quick-switch span{background:var(--canvas-selection);box-shadow:0 1px 3px color-mix(in srgb,var(--canvas-input) 50.2%,transparent)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-shortcuts-panel .ct-quick-switch[aria-checked=true] span{background:var(--canvas-selection)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-theme-menu{padding:10px;gap:8px;border-radius:12px 4px}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-theme-menu button{border-radius:7px;background:color-mix(in srgb,var(--canvas-panel) 33.33%,transparent);border:1px solid color-mix(in srgb,var(--canvas-selection) 18.82%,transparent)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-theme-menu button:hover,#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-theme-menu button[aria-pressed=true]{background:var(--canvas-raised);outline:1px solid var(--canvas-selection);outline-offset:1px;box-shadow:0 0 8px color-mix(in srgb,var(--canvas-selection) 18.82%,transparent)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-theme-menu .canvas-theme-dot{border-color:var(--canvas-selection);box-shadow:0 2px 3px color-mix(in srgb,var(--canvas-input) 50.2%,transparent)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-guide-backdrop{background:color-mix(in srgb,var(--canvas-input) 72.16%,transparent);backdrop-filter:blur(6px)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-creator-guide{padding:24px}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-guide-grid{scrollbar-color:var(--canvas-border) var(--canvas-panel)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-lesson{background:linear-gradient(145deg,color-mix(in srgb,var(--canvas-panel) 60.0%,transparent),color-mix(in srgb,var(--canvas-panel) 90.98%,transparent));border:1px solid color-mix(in srgb,var(--canvas-selection) 31.37%,transparent);border-radius:16px 5px;box-shadow:inset 0 1px color-mix(in srgb,var(--canvas-selection) 14.51%,transparent),0 4px 12px color-mix(in srgb,var(--canvas-input) 18.82%,transparent)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-lesson-cover{border-bottom:1px solid color-mix(in srgb,var(--canvas-selection) 31.37%,transparent)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-lesson h3{color:var(--canvas-text)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-lesson p{color:var(--canvas-muted)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-lesson-tags span,#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-lesson-tags span:first-child{border-radius:6px;background:var(--canvas-raised);color:var(--canvas-text)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-lesson-tags span:last-child{background:#efb75620;color:#ffdb91}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-pack-dialog{overflow:hidden}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-pack-dialog::backdrop{background:color-mix(in srgb,var(--canvas-input) 78.82%,transparent);backdrop-filter:blur(8px)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-pack-layout:after{background:linear-gradient(90deg,color-mix(in srgb,var(--canvas-panel) 69.02%,transparent),color-mix(in srgb,var(--canvas-panel) 18.82%,transparent)),linear-gradient(0deg,var(--canvas-panel) 0,transparent 75%)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-pack-header h2{font-family:'Segoe UI',sans-serif;color:var(--canvas-text)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-pack-tab{border:1px solid color-mix(in srgb,var(--canvas-selection) 50.2%,transparent);border-radius:14px 5px;box-shadow:inset 0 1px color-mix(in srgb,var(--canvas-selection) 18.82%,transparent),0 3px 8px color-mix(in srgb,var(--canvas-input) 31.37%,transparent)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-pack-tab[aria-pressed=true]{border-color:var(--canvas-selection);box-shadow:0 0 0 1px var(--canvas-selection),0 0 14px color-mix(in srgb,var(--canvas-border) 31.37%,transparent)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-pack-tab:hover{border-color:var(--canvas-selection)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-pack-tab strong{font-family:'Segoe UI',sans-serif}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-pack-nav{scrollbar-color:var(--canvas-border) var(--canvas-panel)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-pack-footer{border-color:color-mix(in srgb,var(--canvas-selection) 25.1%,transparent)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-pack-action button{border:1px solid #ffdf8b;border-radius:16px 5px;background:#ecae53 url('/meika/purchase-skin.webp') center/100% 100%;color:#614312;box-shadow:inset 0 1px #fff4ba,0 3px 8px color-mix(in srgb,var(--canvas-input) 50.2%,transparent);font-family:'Segoe UI',sans-serif}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-pack-action button:disabled{background:var(--canvas-raised);color:var(--canvas-muted);border-color:var(--canvas-border);box-shadow:none;opacity:.65}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools :is(button,a):focus-visible{outline:2px solid var(--canvas-selection);outline-offset:3px}
+@media(max-width:600px){#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-popover{top:62px}#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-creator-guide{padding:16px}#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-creator-guide h2{font-size:19px}#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-popover.ct-shortcuts-panel{padding:14px}#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-shortcuts-panel h2{font-size:15px}}
+
+/* Unified identity and tools panel, reusing the Meika player badge. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-topbar.mk-theme{display:flex;align-items:center;justify-content:flex-end;gap:12px;padding:7px 10px 7px 7px;border:1px solid color-mix(in srgb,var(--canvas-selection) 50.2%,transparent);border-radius:36px 6px 18px 6px;background:linear-gradient(110deg,color-mix(in srgb,var(--canvas-panel) 93.33%,transparent),color-mix(in srgb,var(--canvas-raised) 85.1%,transparent));box-shadow:inset 0 1px color-mix(in srgb,var(--canvas-selection) 37.65%,transparent),inset 0 0 0 3px color-mix(in srgb,var(--canvas-selection) 10.2%,transparent),0 5px 16px color-mix(in srgb,var(--canvas-input) 33.33%,transparent);backdrop-filter:blur(14px)}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-player-account{padding:3px 8px 3px 3px;border:1px solid transparent;border-radius:30px 6px;background:transparent;color:var(--canvas-text);box-shadow:none;text-align:left;flex-shrink:0;transition:border-color .15s,background .15s}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-player-account:has(.ct-player-account-trigger:is(:hover,[aria-expanded=true])){background:linear-gradient(110deg,var(--canvas-panel),color-mix(in srgb,var(--canvas-panel) 90.98%,transparent));border-color:var(--canvas-selection)}
+#cimora-canvas.canvas-fantasy-experiment .ct-player-account .mk-player{min-width:0;gap:12px}
+#cimora-canvas.canvas-fantasy-experiment .ct-player-account .mk-avatar{flex-basis:54px;height:54px}
+#cimora-canvas.canvas-fantasy-experiment .ct-player-account .mk-avatar img{width:54px;height:54px;border-width:2px;box-shadow:0 0 0 3px color-mix(in srgb,var(--canvas-panel) 50.2%,transparent)}
+#cimora-canvas.canvas-fantasy-experiment .ct-player-account .mk-player strong{font-size:17px;line-height:1.3;white-space:nowrap}
+#cimora-canvas.canvas-fantasy-experiment .ct-player-account .mk-player small{display:block;border-top:1px solid color-mix(in srgb,var(--canvas-selection) 31.37%,transparent);padding-top:5px;margin-top:5px;font-size:11px;line-height:1.3;color:var(--canvas-muted);white-space:nowrap}
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-popover{top:calc(100% + 10px)}
+@media(max-width:600px){
+ #cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-topbar.mk-theme{flex-direction:column;align-items:stretch;gap:8px;border-radius:24px 6px;padding:8px}
+ #cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-player-account{order:-1;padding-block:4px}
+ #cimora-canvas.canvas-fantasy-experiment .ct-player-account .mk-avatar{flex-basis:44px;height:44px}
+ #cimora-canvas.canvas-fantasy-experiment .ct-player-account .mk-avatar img{width:44px;height:44px}
+ #cimora-canvas.canvas-fantasy-experiment .ct-player-account .mk-player strong{font-size:15px}
+ #cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-popover{max-height:calc(100dvh - 240px)}
+}
+
+/* Sapphire currency counter: available account balance, not level progress. */
+#cimora-canvas.canvas-fantasy-experiment .ct-player-account .mk-player-subtitle{margin-top:5px}
+#cimora-canvas.canvas-fantasy-experiment .ct-player-account .ct-account-balance{display:block}
+#cimora-canvas.canvas-fantasy-experiment .ct-player-account .mk-resource{min-width:0;height:25px;padding:0 10px 0 2px;gap:7px;border-radius:4px 10px 4px 10px;background:linear-gradient(100deg,color-mix(in srgb,var(--canvas-raised) 73.33%,transparent),color-mix(in srgb,var(--canvas-panel) 80.0%,transparent));border-color:color-mix(in srgb,var(--canvas-selection) 43.92%,transparent);box-shadow:inset 0 1px color-mix(in srgb,var(--canvas-selection) 14.51%,transparent)}
+#cimora-canvas.canvas-fantasy-experiment .ct-player-account .mk-resource img{width:29px;height:32px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 2px 2px color-mix(in srgb,var(--canvas-panel) 50.2%,transparent))}
+#cimora-canvas.canvas-fantasy-experiment .ct-player-account .mk-resource strong{font-size:14px;line-height:1.2;color:var(--canvas-text);font-variant-numeric:tabular-nums;max-width:150px;overflow:hidden;text-overflow:ellipsis}
+
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-topbar.mk-theme .ct-capsule{padding:4px 0 4px 12px;min-height:0;border:0;border-left:1px solid color-mix(in srgb,var(--canvas-selection) 25.1%,transparent);border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;gap:7px}
+@media(max-width:600px){#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-topbar.mk-theme .ct-capsule{border-left:0;border-top:1px solid color-mix(in srgb,var(--canvas-selection) 25.1%,transparent);padding:8px 0 0;justify-content:space-between}}
+
+/* Account menu follows the left-hand identity area. */
+#cimora-canvas.canvas-fantasy-experiment[data-theme] .ct-meika-tools .ct-account-popover{left:8px;right:auto}

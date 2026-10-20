@@ -1,0 +1,65 @@
+.pricing-page{min-height:100dvh;background:linear-gradient(160deg,#c9dfe6 0%,#e4e6eb 48%,#eee4df 100%);isolation:isolate;position:relative}
+.pricing-page:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(148deg,transparent 38%,#ffffff26 38%,#ffffff26 59%,transparent 59%);pointer-events:none}
+.pricing-page .cimora-nav{padding:6px;background:transparent;border:1px solid transparent;box-shadow:none;border-radius:4px}
+.pricing-page .cimora-nav>:is(a,button){color:#24372d}
+.pricing-page .cimora-nav>:is(a,button)[aria-expanded=true]{color:#fff}
+.pricing-page .cimora-nav>[aria-current=page]{background:#f0e8d7;color:#24372d}
+.pricing-page .pricing-card{--pack-sky:#b5d1cb;--pack-mid:#769f91;--pack-light:#f5f0d1;--pack-dark:#3b5e54;background-image:linear-gradient(110deg,#92c5ec 0%,#b1c7ec 38%,#cfbde4 72%,#e6bacb 100%);background-size:calc(400% + 60px) 100%;background-position:var(--sky-x,0%) 0;background-origin:border-box;background-repeat:no-repeat}
+.pricing-page .pricing-price span,.pricing-page .pricing-card-description,.pricing-page .pricing-card li{color:#273447;font-weight:500}
+.pricing-page .pricing-card li svg{color:#64502d}
+.pricing-page .pricing-card .pricing-button:disabled{opacity:1}
+.pricing-page .pricing-card ul{border-top-color:#69788d40}
+.pricing-page .pricing-card .pricing-button{background:#171717;color:#fff;border-color:#171717;border-radius:8px;min-height:40px;justify-content:center;font-size:13px;font-weight:500}
+.pricing-page .pricing-card:nth-child(2){--sky-x:33.333333%;--pack-sky:#e7cf9c;--pack-mid:#bf9255;--pack-light:#fff1c1;--pack-dark:#6e6241}
+.pricing-page .pricing-card:nth-child(3){--sky-x:66.666667%;--pack-sky:#c9c0d7;--pack-mid:#9d89b4;--pack-light:#f6e7c2;--pack-dark:#584566}
+.pricing-page .pricing-card:nth-child(4){--sky-x:100%;--pack-sky:#ddbd9a;--pack-mid:#bd8a54;--pack-light:#ffe4ac;--pack-dark:#6b493a}
+.pricing-page .pricing-artwork{width:72px;height:72px;overflow:visible;border-radius:0;box-shadow:none}
+.pricing-availability{text-align:center;font-size:11px;line-height:1.7;max-width:680px;padding:0 24px 50px;margin:auto;color:#65706d}
+.pricing-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:1176px;padding:28px 0;margin:0 auto;border-top:1px solid #879a9838;font-size:11px;color:#55665e}
+.pricing-footer>a:first-child{font-weight:700;letter-spacing:.12em;color:#293b32}
+.pricing-footer a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:1240px){.pricing-footer{margin:0 32px}}
+@media(max-width:740px){.pricing-page .cimora-nav{gap:0}.pricing-page .cimora-nav>:is(a,button){font-size:15px;padding:10px 8px;gap:4px}.pricing-footer{flex-wrap:wrap;margin:0 20px;line-height:1.6}.pricing-footer span{display:none}}
+@media(max-width:370px){.pricing-page .cimora-nav>:is(a,button){font-size:13px;padding:9px 6px}}
+
+/* Each card reveals its portion of one sky, including the gaps between cards. */
+@media(max-width:1050px) and (min-width:481px){
+ .pricing-page .pricing-card{background-image:linear-gradient(135deg,#92c5ec 0%,#b1c7ec 38%,#cfbde4 72%,#e6bacb 100%);background-size:calc(200% + 20px) calc(200% + 20px);background-position:0 0}
+ .pricing-page .pricing-card:nth-child(2){background-position:100% 0}
+ .pricing-page .pricing-card:nth-child(3){background-position:0 100%}
+ .pricing-page .pricing-card:nth-child(4){background-position:100% 100%}
+}
+@media(max-width:480px){
+ .pricing-page .pricing-card{background-image:linear-gradient(180deg,#92c5ec 0%,#b1c7ec 38%,#cfbde4 72%,#e6bacb 100%);background-size:100% calc(400% + 60px);background-position:0 var(--sky-x,0%)}
+}
+
+/* Supplied illustration, cropped as a banner without stretching. */
+.pricing-page .pricing-request{
+ background-color:#282b43;
+ background-image:linear-gradient(90deg,rgba(15,19,34,.78),rgba(15,19,34,.48) 58%,rgba(15,19,34,.12)),url('/pricing-request-background.png');
+ background-size:cover;
+ background-position:center 25%;
+ background-repeat:no-repeat;
+ border-color:#626478;
+ color:#fff;
+}
+.pricing-page .pricing-request h2{color:#fff;text-shadow:0 1px 4px #0008}
+.pricing-page .pricing-request p{color:#f0f2f8;text-shadow:0 1px 3px #0009}
+.pricing-page .pricing-request-button{border-color:#ffffff70;background:#171717;color:#fff}
+@media(max-width:740px){
+ .pricing-page .pricing-request{background-position:65% 25%;background-image:linear-gradient(90deg,rgba(15,19,34,.84),rgba(15,19,34,.55)),url('/pricing-request-background.png')}
+}
+
+/* More sapphires represent progressively larger credit packs, not exact credit counts. */
+.pricing-gems{position:relative;width:72px;height:72px;filter:drop-shadow(0 3px 3px #173e5b30)}
+.pricing-page .pricing-gems img{position:absolute;width:36px;height:44px;object-fit:contain}
+.pricing-gems-1 img{left:14px;top:10px;width:46px!important;height:54px!important}
+.pricing-gems-2 img:nth-child(1){left:3px;top:9px;transform:rotate(-15deg)}
+.pricing-gems-2 img:nth-child(2){left:33px;top:23px;transform:rotate(12deg)}
+.pricing-gems-3 img:nth-child(1){left:18px;top:0}
+.pricing-gems-3 img:nth-child(2){left:0;top:28px;transform:rotate(-18deg)}
+.pricing-gems-3 img:nth-child(3){left:36px;top:28px;transform:rotate(15deg)}
+.pricing-gems-4 img:nth-child(1){left:4px;top:0;transform:rotate(-12deg)}
+.pricing-gems-4 img:nth-child(2){left:34px;top:0;transform:rotate(12deg)}
+.pricing-gems-4 img:nth-child(3){left:0;top:30px;transform:rotate(-18deg)}
+.pricing-gems-4 img:nth-child(4){left:36px;top:30px;transform:rotate(18deg)}

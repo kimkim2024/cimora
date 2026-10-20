@@ -6,3 +6,9 @@ dist/
 .DS_Store
 Thumbs.db
 *.log
+
+# Local inspection and generated artifacts
+.playwright-cli/
+output/
+outputs/
+*.tsbuildinfo
